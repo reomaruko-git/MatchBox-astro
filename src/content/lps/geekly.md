@@ -1,16 +1,21 @@
 ---
+layout: ../../components/templates/TemplateSingle.astro
 title: 「技術の話が通じない」と嘆くあなたへ。IT・ゲーム業界の“専門店”が選ばれる理由とは？
 description: 総合型エージェントで的外れな求人ばかり紹介されていませんか？現役エンジニア・クリエイターが、自身の市場価値を正しく評価してもらうために選ぶべき「特化型エージェント」の活用法について解説します。
 images: { mv: '/assets/images/lp/geekly/mv_engineer.jpg' }
 colors:
-  primary: "#3b82f6"
-  accent: "#ef4444"
+  primary: "#25959d"
+  accent: "#eb803e"
+keywords:
+  - text: "Geekly"
+    link: "/link/geekly"
 ---
 
-**この記事の対象者**  
-✓ IT・Web・ゲーム業界での実務経験がある方  
-✓ 一都三県または関西エリアでの勤務を希望している方  
-✓ 正社員としての転職を検討中の方
+<ul data-title="この記事の対象者" class="with-title">
+  <li>IT・Web・ゲーム業界での実務経験がある方</li>
+  <li>一都三県または関西エリアでの勤務を希望している方</li>
+  <li>正社員としての転職を検討中の方</li>
+</ul>
 
 ---
 
@@ -20,9 +25,9 @@ colors:
 「マイクロサービスの設計経験を説明しても、話が噛み合わない」  
 「GitHubのコミット履歴を見せても、反応が薄い」
 
-技術的な話が通じないまま進む転職活動は、正直しんどい。そう感じているなら、それは **相談する場所を間違えている** だけかもしれません。
+技術的な話が通じないまま進む転職活動は、正直しんどい。そう感じているなら、それは**相談する場所を間違えている**だけかもしれません。
 
-エンジニアやクリエイターのキャリアは、専門性が高いからこそ、**わかる人に相談する** ことが何より大切です。
+エンジニアやクリエイターのキャリアは、専門性が高いからこそ、**わかる人に相談する**ことが何より大切です。
 
 この記事では、IT・Web・ゲーム業界に特化した転職エージェント「**Geekly（ギークリー）**」が、なぜ現場経験者から選ばれているのかを解説します。
 
@@ -42,9 +47,9 @@ IT業界は変化が早い。去年主流だった技術が、今年にはもう
 
 ### 求人の質と量、両方確保
 
-Geeklyは大手企業を中心に **30,000件以上**（※2024年1月時点）の求人を保有しています。
+Geeklyは大手企業を中心に *30,000件以上*（※2024年1月時点）の求人を保有しています。
 
-この中には、Geeklyだけが扱う **独占求人** も多数。業界との長年の信頼関係があるからこそ、「まだ表に出していない新規プロジェクト」や「技術選定から関われるポジション」といった、他では出会えない案件に出会えます。
+この中には、Geeklyだけが扱う**独占求人**も多数。業界との長年の信頼関係があるからこそ、「まだ表に出していない新規プロジェクト」や「技術選定から関われるポジション」といった、他では出会えない案件に出会えます。
 
 ### キーワードマッチングじゃない、本当のマッチング
 
@@ -82,8 +87,8 @@ Geeklyは「プロフェッショナル向け」のサービスです。その�
 Geeklyのサービスは完全無料。まずは話を聞いてみて、「ここなら任せられそう」と思えたら利用する、くらいの温度感で大丈夫です。
 
 <div class="cta-container">
-  <a href="https://www.geekly.co.jp/entry/t02" class="btn-primary" target="_blank" rel="noopener noreferrer">
-    Geekly公式サイトで詳細を見る<br>
-    <span class="text-sm">※登録は簡単1分程度で完了します</span>
+  <a href="https://www.geekly.co.jp/entry/t02" class="btn-primary !no-underline hover:opacity-80 transition-opacity" style="background-color: transparent; color: color-mix(in srgb, var(--color-primary), black 20%)" target="_blank" rel="noopener noreferrer">
+    <i class="fa-solid fa-circle-arrow-right mr-2"></i>Geekly公式サイトで詳細を見る<br>
   </a>
+  <p class="text-center mt-2 text-sm font-normal">※登録は簡単1分程度で完了します</p>
 </div>

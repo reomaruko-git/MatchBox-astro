@@ -21,9 +21,13 @@ const colors = { ...defaultColors, ...(data.colors || {}) };
 
 // ▼ 3. リンクの取得
 const affiliateLink = `/link/${entry.slug}`;
+const keywords = [
+  ...(data.title ? [{ text: data.title, link: affiliateLink }] : []),
+  ...(data.keywords || [])
+];
 ---
 
-<BaseLayout title={data.title} description={data.description} colors={colors}>
+<BaseLayout title={data.title} description={data.description} colors={colors} keywords={keywords}>
 <div class="template-wrapper min-h-screen bg-slate-50 text-txt-main pb-24 md:pb-0">
   
   {/* ▼ ヘッダー */}
@@ -47,9 +51,7 @@ const affiliateLink = `/link/${entry.slug}`;
       <p class="text-accent font-bold tracking-[0.2em] uppercase mb-5 text-xs md:text-sm bg-black/30 inline-block px-4 py-1 rounded-full border border-white/10 backdrop-blur-md">
         For Professional Engineers
       </p>
-      <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-white drop-shadow-md tracking-tighter">
-        {data.title}
-      </h1>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-relaxed mb-6 text-white drop-shadow-md tracking-tighter [text-wrap:balance]" set:html={data.title} />
       <p class="text-gray-100 text-sm md:text-lg font-medium leading-relaxed max-w-2xl mx-auto tracking-normal opacity-90 mb-0 md:mb-10">
         {data.description}
       </p>
@@ -86,7 +88,7 @@ const affiliateLink = `/link/${entry.slug}`;
       {/* 記事下CTA */}
       <div class="mt-20 text-center mb-10">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8 tracking-tight">
-          <span class="bg-gradient-to-r from-primary/20 to-transparent px-2 rounded">非公開求人</span>を含む、<br class="md:hidden"/>あなただけの提案を。
+          <span class="bg-gradient-to-r from-primary/20 to-transparent px-2 rounded">非公開求人を含む、<br class="md:hidden"/>あなただけの提案を。</span>
         </h2>
         
         {/* バナーエリア */}

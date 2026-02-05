@@ -6,6 +6,10 @@ import BaseLayout from '../../layouts/Layout.astro';
 const { entry, Content } = Astro.props;
 const data = entry.data;
 const cushionUrl = `/link/${entry.slug}`;
+const keywords = [
+  ...(data.title ? [{ text: data.title, link: cushionUrl }] : []),
+  ...(data.keywords || [])
+];
 
 // 配色設定（なければデフォルト）
 const colors = data.colors || {
@@ -17,7 +21,7 @@ const colors = data.colors || {
 };
 ---
 
-<BaseLayout title={data.title} description={data.description} colors={colors}>
+<BaseLayout title={data.title} description={data.description} colors={colors} keywords={keywords}>
 <div class="bg-white min-h-screen pb-20">
   {/* ヘッダー画像（クリックで飛ぶようにする場合も多い） */}
   <a href={cushionUrl} class="block w-full max-w-2xl mx-auto hover:opacity-95 transition-opacity">
