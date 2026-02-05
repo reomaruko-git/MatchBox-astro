@@ -5,22 +5,37 @@ const {
   label = "公式サイトで詳細を見る",
   microCopy = "※登録は簡単1分程度で完了します",
   color = "var(--color-accent)",
-} = Astro.props;
+  iconClass = "fa-solid fa-arrow-right",
+} = Astro.props as Props;
 ---
 <div class="cta-container text-center mt-8 mb-4">
   {title && <p class="text-sm font-bold text-accent mb-2 !text-center">{title}</p>}
-  <a href={href} class="btn-primary relative !no-underline block w-full py-4 rounded-lg shadow-lg font-bold text-lg cta-button" style={`background-color: ${color}; color: white;`} target="_blank" rel="noopener noreferrer">
-    <span class="absolute inset-0 rounded-lg overflow-hidden shiny-effect"></span>
+  <a href={href} class="cta-button" target="_blank" rel="noopener noreferrer">
+    <span class="absolute inset-0 shiny-effect"></span>
     <span class="relative z-10">
-      <i class="fa-solid fa-arrow-right"></i>{label}
+      <i class={`${iconClass} mr-2`}></i>{label}
     </span>
   </a>
   {microCopy && <span class="text-xs text-gray-500 mt-2 block">{microCopy}</span>}
 </div>
 
-<style>
+<style define:vars={{ btnColor: color }}>
   .cta-button {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--btnColor);
+    color: white;
+    font-weight: bold;
+    font-size: 1.125rem;
+    text-decoration: none;
+    overflow: hidden;
     transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
   .cta-button:hover {
     transform: translateY(-4px);

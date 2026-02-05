@@ -99,7 +99,7 @@ Beyond Career は違います。
 紹介先企業の事業責任者とパイプラインを持っています。「今、DX推進室でこんな人材が不足している」という内部情報を握っているため、一般公募される前の**独占求人**に、最短ルートでアプローチ可能です。
 
 <div class="flex justify-center my-8">
-  <img src="https://www.rentracks.jp/adx/p.gifx?idx=0.71657.374389.9942.14163&dna=163453" border="0" height="1" width="1"><a href="/link/beyond-career" rel="nofollow noopener" target="_blank" class="block transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl hover:opacity-90 rounded-lg"><img src="https://www.image-rentracks.com/14163/300_300_high_01.png" width="300" height="300" border="0" class="rounded-lg"></a>
+  <img src="https://www.rentracks.jp/adx/p.gifx?idx=0.71657.374389.9942.14163&dna=163453" border="0" height="1" width="1"><a href="/link/beyond-career" rel="nofollow noopener" target="_blank" class="block transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:opacity-90"><img src="https://www.image-rentracks.com/14163/300_300_high_01.png" width="300" height="300" border="0" class="rounded-lg"></a>
 </div>
 
 ## ただし、誰でも利用できるわけではありません
