@@ -1,6 +1,8 @@
 ---
-layout: ../../components/templates/TemplateSingle.astro
-title: 「技術の話が通じない」と嘆くあなたへ。IT・ゲーム業界の“専門店”が選ばれる理由とは？
+template: ../../components/templates/TemplateSingle.astro
+title: "「技術の話が通じない」と嘆くあなたへ。｜Geekly"
+heroTitle: "<span class='text-5xl md:text-7xl lg:text-8xl'>「技術の話が通じない」と<br class='md:hidden'><span class='text-accent'>嘆くあなたへ。</span></span><br><span class='text-lg md:text-3xl block mt-4 font-bold opacity-90 tracking-normal leading-snug'>IT・ゲーム業界の“専門店”が<br>選ばれる理由とは？</span>"
+badge: "For IT/Web/Game Engineers"
 description: 総合型エージェントで的外れな求人ばかり紹介されていませんか？現役エンジニア・クリエイターが、自身の市場価値を正しく評価してもらうために選ぶべき「特化型エージェント」の活用法について解説します。
 images: { mv: '/assets/images/lp/geekly/mv_engineer.jpg' }
 colors:

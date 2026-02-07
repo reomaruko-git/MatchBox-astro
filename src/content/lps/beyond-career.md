@@ -1,7 +1,8 @@
 ---
-layout: ../../components/templates/TemplateSingle.astro
+template: ../../components/templates/TemplateSingle.astro
 title: "SIerでの経験は、もっと高く売れる。｜Beyond Career"
-heroTitle: "<span class='text-4xl md:text-6xl lg:text-7xl'>SIerでの経験は、<span class='text-accent'>もっと高く売れる。</span></span><br><span class='text-lg md:text-3xl block mt-4 font-bold opacity-90 tracking-normal leading-snug'>「年収800万の壁」に阻まれたPMが、<br>技術と経営の“通訳”として評価されるまで</span>"
+heroTitle: "<span class='text-5xl md:text-7xl lg:text-8xl'>SIerでの経験は、<span class='text-accent'>もっと高く売れる。</span></span><br><span class='text-lg md:text-3xl block mt-4 font-bold opacity-90 tracking-normal leading-snug'>「年収800万の壁」に阻まれたPMが、<br>技術と経営の“通訳”として評価されるまで</span>"
+badge: "For Professional Engineers"
 description: 「管理職＝技術終了」に悩むSIer出身者へ。元・最終面接官があなたの市場価値を再定義し、選考通過率90%を実現する裏側を公開。
 images: { mv: '/assets/images/lp/beyond-career/mv_beyond-career.jpg' } # 変更：オフィスで腕を組み、窓の外を見つめる30代男性の背中（哀愁と野心）
 colors:
@@ -32,7 +33,7 @@ cta:
 **「今の会社のままでは、年収800万、1000万の壁は越えられない」**
 
 もしあなたがそう感じているなら、それは事実です。
-しかし、それはあなたの能力不足ではありません。**「あなたを高く買う業界」** に身を置いていないだけです。
+しかし、それはあなたの能力不足ではありません。*「あなたを高く買う業界」* に身を置いていないだけです。
 
 この記事では、SIer出身者のキャリアアップに特化した実績を持つエージェント「 **Beyond Career** 」が、なぜ多くのPM/PLをハイクラス人材へと変貌させられるのか、その理由を解説します。
 

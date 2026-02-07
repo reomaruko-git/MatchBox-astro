@@ -34,28 +34,19 @@ const ctaData = data.cta;
 <BaseLayout title={data.title} description={data.description} colors={colors} keywords={keywords}>
 <div class="template-wrapper min-h-screen bg-slate-50 text-txt-main pb-24 md:pb-0">
   
-  {/* ▼ ヘッダー */}
-  <header class="absolute top-0 left-0 w-full z-50 py-4 px-6">
-    <div class="max-w-5xl mx-auto flex justify-between items-center">
-      <div class="text-white font-bold tracking-widest text-xs md:text-sm drop-shadow-md border-b-2 border-accent pb-1">
-        IT・Web業界転職の最適解
-      </div>
-    </div>
-  </header>
-
   {/* ▼▼▼ MVセクション ▼▼▼ */}
-  <section class="relative min-h-[480px] md:min-h-[640px] flex items-center justify-center overflow-hidden py-20">
+  <section class="relative min-h-[440px] md:min-h-[560px] flex items-start justify-center overflow-hidden pt-16 pb-12 md:pt-16 md:pb-20">
     <div class="absolute inset-0 z-0">
       <img src={mvImage} alt="Main Visual" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-[radial-gradient(#ffffff_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-20"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/60 to-gray-900/30"></div>
     </div>
 
-    <div class="relative z-10 container max-w-4xl mx-auto px-6 text-center mt-8">
-      <p class="text-accent font-bold tracking-[0.2em] uppercase mb-5 text-xs md:text-sm bg-black/30 inline-block px-4 py-1 rounded-full border border-white/10 backdrop-blur-md">
-        For Professional Engineers
-      </p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-relaxed mb-6 text-white drop-shadow-md tracking-tighter [text-wrap:balance]" set:html={data.heroTitle || data.title} />
+    <div class="relative z-10 container max-w-4xl mx-auto px-6 text-center">
+      {data.badge && <p class="text-accent font-bold tracking-[0.2em] uppercase mb-5 text-xs md:text-sm bg-black/30 inline-block px-4 py-1 rounded-full border border-white/10 backdrop-blur-md">
+        {data.badge}
+      </p>}
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-white drop-shadow-md tracking-tighter [text-wrap:balance]" set:html={data.heroTitle || data.title} />
       <p class="text-gray-100 text-sm md:text-lg font-medium leading-relaxed max-w-2xl mx-auto tracking-normal opacity-90 mb-0 md:mb-10">
         {data.description}
       </p>

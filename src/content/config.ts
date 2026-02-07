@@ -4,7 +4,9 @@ const lps = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    template: z.string().optional(),
     heroTitle: z.string().optional(),
+    badge: z.string().optional(),
     description: z.string().optional(),
     images: z.object({
       mv: z.string().optional(),

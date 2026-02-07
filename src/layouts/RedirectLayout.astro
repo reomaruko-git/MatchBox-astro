@@ -1,7 +1,7 @@
 ---
 // src/layouts/RedirectLayout.astro
 const {
-  pageTitle = "OFFERS",
+  pageTitle = "Match Box",
   affiliateUrl = "#",
 } = Astro.props;
 
@@ -15,7 +15,7 @@ const isProd = import.meta.env.PROD;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>{pageTitle} へ移動中 | OFFERS</title>
+    <title>{pageTitle} へ移動中 | Match Box</title>
 
     {isProd && (
       <>
@@ -48,7 +48,7 @@ const isProd = import.meta.env.PROD;
 
     <style>
       body {
-        background-color: #f0fdfa;
+        background-color: #e5e5e5;
         font-family: sans-serif;
         margin: 0;
         display: flex;
@@ -65,7 +65,7 @@ const isProd = import.meta.env.PROD;
         align-items: center;
         justify-content: center;
         margin-bottom: 1.5rem;
-        color: #0d9488;
+        color: #10273b;
         font-size: 1.5rem;
         font-weight: 300;
         letter-spacing: 0.2em;
@@ -73,7 +73,7 @@ const isProd = import.meta.env.PROD;
       .fa-spin-custom { animation: spin 2s linear infinite; margin: 0 0.75rem; }
       @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
       .fallback-text { font-size: 10px; color: #9ca3af; line-height: 1.6; }
-      .fallback-link { text-decoration: underline; color: #0d9488; font-weight: bold; }
+      .fallback-link { text-decoration: underline; color: #231a76; font-weight: bold; }
     </style>
   </head>
 
@@ -88,13 +88,13 @@ const isProd = import.meta.env.PROD;
     )}
 
     <div class="loading-container">
-      <p style="color: #0d9488; font-size: 1.1rem; margin-bottom: 1rem; font-weight: bold;">
+      <p style="color: #11225c; font-size: 1.1rem; margin-bottom: 1rem; font-weight: bold;">
         {pageTitle} へ移動しています...
       </p>
 
       <div class="loading-text">
         <span>L</span>
-        <i class="fas fa-capsules fa-spin-custom"></i>
+        <i class="fa-solid fa-box fa-spin-custom"></i>
         <span>ADING</span>
       </div>
 
