@@ -11,6 +11,9 @@ colors:
 keywords:
   - text: "Geekly"
     link: "/link/geekly"
+heroCta:
+  label: "公式サイトで求人を見る"
+  microCopy: "※登録は無料・1分で完了"
 affiliateLink: "https://www.geekly.co.jp/entry/t02"
 cta:
   title: "＼ IT・Web・ゲーム業界特化 ／"

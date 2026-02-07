@@ -1,27 +1,125 @@
 ---
-const { 
-  link,
-  text = "年収700万以上の案件も！",
-  label = "公式サイトで求人を見る",
-  microCopy = "完全無料・1分で登録完了",
-  colors = { accent: '#F39C12' }
-} = Astro.props;
+const { link, text, label, microCopy, colors } = Astro.props;
+
+const displayText = text || "年収700万以上の案件も！";
+const displayLabel = label || "公式サイトで求人を見る";
+const displayMicroCopy = microCopy || "完全無料・1分で登録完了";
+
+const safeColors = colors || {};
+const primaryColor = safeColors.primary || '#00A968';
+const accentColor = safeColors.accent || '#F39C12';
 ---
 
-<div class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-gray-200 px-3 pt-3 md:hidden z-50" style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
-  <div class="max-w-sm mx-auto relative">
-    {text && <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-max">
-       <div class="bg-gray-800 text-yellow-300 text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm relative">
-          <span class="relative z-10">{text}</span>
-          <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-gray-800"></div>
-       </div>
-    </div>}
-    <a href={link} class="block w-full bg-accent hover:opacity-90 text-white text-center font-bold py-3.5 rounded-xl shadow-md flex flex-col justify-center items-center leading-tight transition-all active:scale-95" style={`background-color: ${colors.accent}`}>
-      <span class="text-[10px] block mb-0.5 text-white/90 font-bold tracking-wider">{microCopy}</span>
-      <span class="text-lg flex items-center justify-center gap-2">
-        {label}
-        <i class="fas fa-chevron-right text-sm"></i>
-      </span>
+<div class="cta-banner">
+  <div class="cta-container">
+    {displayText ? (
+      <div class="cta-bubble-wrapper">
+        <div class="cta-bubble" style={`background-color: ${primaryColor};`}>
+          <span>{displayText}</span>
+          <div class="cta-arrow" style={`background-color: ${primaryColor};`}></div>
+        </div>
+      </div>
+    ) : null}
+    <a href={link} class="cta-button" style={`background-color: ${accentColor};`}>
+      <span class="micro">{displayMicroCopy}</span>
+      <span class="main">{displayLabel} <i class="fas fa-chevron-right"></i></span>
     </a>
   </div>
 </div>
+
+<style is:global>
+  .cta-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid #e5e7eb;
+    padding: 12px;
+    padding-bottom: 12px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    z-index: 50;
+  }
+
+  .cta-container {
+    max-width: 28rem;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .cta-bubble-wrapper {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .cta-bubble {
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .cta-arrow {
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+  }
+
+  .cta-button {
+    display: block;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .cta-button:hover {
+    opacity: 0.9;
+  }
+
+  .cta-button:active {
+    transform: scale(0.95);
+  }
+
+  .micro {
+    display: block;
+    font-size: 10px;
+    margin-bottom: 2px;
+    opacity: 0.9;
+    letter-spacing: 0.05em;
+  }
+
+  .main {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .main i {
+    font-size: 14px;
+  }
+
+  @media (min-width: 768px) {
+    .cta-banner {
+      display: none;
+    }
+  }
+</style>

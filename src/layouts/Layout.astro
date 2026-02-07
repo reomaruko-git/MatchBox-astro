@@ -88,7 +88,6 @@ const {
           const articles = document.querySelectorAll('.prose');
           if (articles.length === 0) return;
 
-          // キーワードが他のキーワードの一部である場合を考慮し、長いものから順に処理
           const sortedKeywords = [...keywords].sort((a, b) => b.text.length - a.text.length);
           const regexParts = sortedKeywords.map(kw => kw.text.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'));
           if (regexParts.length === 0) return;
@@ -96,10 +95,8 @@ const {
           const masterRegex = new RegExp(`(${regexParts.join('|')})`, 'g');
 
           articles.forEach(article => {
-            // 記事本文(.prose)内のテキストノードを探索
             const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
               acceptNode: (node) => {
-                // 既にリンク、スクリプト、スタイル、見出しの一部であるテキストは除外
                 let parent = node.parentElement;
                 while (parent && parent !== article) {
                   const tagName = parent.tagName.toLowerCase();
@@ -115,19 +112,18 @@ const {
             const nodesToProcess = [];
             let currentNode;
             while (currentNode = walker.nextNode()) {
-              masterRegex.lastIndex = 0; // test前にリセット
+              masterRegex.lastIndex = 0;
               if (masterRegex.test(currentNode.nodeValue)) {
                 nodesToProcess.push(currentNode);
               }
             }
 
-            // テキストノードを分割し、キーワードをリンクに置換
             nodesToProcess.forEach(node => {
               const text = node.nodeValue;
               const fragment = document.createDocumentFragment();
               let lastIndex = 0;
 
-              masterRegex.lastIndex = 0; // replace前にリセット
+              masterRegex.lastIndex = 0;
               text.replace(masterRegex, (match, ...args) => {
                 const offset = args[args.length - 2];
                 if (offset > lastIndex) {
@@ -165,7 +161,6 @@ const {
       'color-txt-main': colors.txtMain,
       'color-link': colors.link,
     }}>
-      /* フォント定義 */
       @font-face {
         font-family: 'LINE Seed JP';
         src: url('https://cdn.jsdelivr.net/gh/kemat/line-seed-jp-webfont@main/fonts/LINESeedJP_OTF-Regular.woff2') format('woff2');
@@ -188,7 +183,6 @@ const {
         font-display: swap;
       }
 
-      /* 強制適用 */
       body {
         font-family: "LINE Seed JP", "Helvetica Neue", Arial, sans-serif !important;
       }
@@ -196,7 +190,6 @@ const {
         font-family: "LINE Seed JP", sans-serif !important;
       }
 
-      /* デザイン調整 */
       .prose h2 {
         font-size: 1.75rem;
         font-weight: 800;
@@ -221,14 +214,16 @@ const {
         border-bottom: 2px solid #e2e8f0;
         letter-spacing: -0.01em;
       }
-      .prose p { margin-bottom: 2rem; text-align: justify; }
+      .prose p { 
+        margin-bottom: 2rem; 
+        text-align: justify; 
+      }
       .prose strong {
         color: var(--color-txt-main) !important;
         font-weight: 700 !important; 
         background-image: none !important;
         padding: 0;
       }
-      /* *text* をマーカーとして使用 */
       .prose em {
         font-style: normal !important;
         font-weight: 700 !important;
@@ -280,7 +275,6 @@ const {
         font-weight: 900;
       }
 
-      /* 自動挿入されるキーワードリンクのスタイル */
       .keyword-link,
       .prose .keyword-link,
       .prose strong .keyword-link {
@@ -299,10 +293,9 @@ const {
         border-bottom-color: color-mix(in srgb, var(--color-accent), white 40%) !important;
       }
 
-      /* 比較表のデザイン (.table_design13) */
       .table-scroll {
         margin-bottom: 2rem;
-        padding-top: 2rem; /* おすすめバッジが見切れないように */
+        padding-top: 2rem;
       }
       .table_design13 {
         border-collapse: collapse;
@@ -335,7 +328,6 @@ const {
         display: block;
         font-weight: normal;
       }
-      /* 2列目を「おすすめ」として強調 */
       .table_design13 thead th:nth-child(2) {
         background-color: var(--color-accent);
         position: relative;
@@ -387,15 +379,13 @@ const {
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
         outline: 2px solid var(--color-accent);
       }
-      /* 3列目（一般的なエージェント）をグレーにして対比を強める */
       .table_design13 thead th:nth-child(3) {
-        background-color: #94a3b8; /* ヘッダー背景をグレーに */
+        background-color: #94a3b8;
       }
       .table_design13 td:nth-child(3) {
-        color: #334053; /* 文字色をグレーに */
+        color: #334053;
       }
 
-      /* スマホ表示時のみスクロールと最小幅を適用 */
       @media (max-width: 768px) {
         .table-scroll {
           overflow-x: auto;
@@ -403,7 +393,6 @@ const {
         .table_design13 {
           min-width: 700px;
         }
-        /* 1列目の文字サイズ縮小と余白調整 */
         .table_design13 thead th:first-child,
         .table_design13 tbody th {
           font-size: 0.85rem;
@@ -411,7 +400,6 @@ const {
         }
       }
 
-      /* キラッと光るエフェクト */
       .shiny-effect::after {
         content: '';
         position: absolute;

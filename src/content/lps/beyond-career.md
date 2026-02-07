@@ -11,6 +11,9 @@ colors:
 keywords:
   - text: "Beyond Career"
     link: "/link/beyond-career"
+heroCta:
+  label: "無料でキャリア診断を受ける"
+  microCopy: "※非公開求人を確認する"
 affiliateLink: "https://www.rentracks.jp/adx/r.html?idx=0.71657.374389.7458.10582&dna=129080"
 cta:
   title: "＼ 1分で完了・非公開求人を確認 ／"

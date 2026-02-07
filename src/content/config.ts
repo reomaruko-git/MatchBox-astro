@@ -28,6 +28,11 @@ const lps = defineCollection({
       microCopy: z.string().optional(),
       icon: z.string().optional(),
     }).optional(),
+    // ▼▼▼ heroCtaを追加 ▼▼▼
+    heroCta: z.object({
+      label: z.string().optional(),
+      microCopy: z.string().optional(),
+    }).optional(),
     // ▼▼▼ MVボタンの文言設定を追加 ▼▼▼
     mvButtonLabel: z.string().optional(),
     mvMicroCopy: z.string().optional(),
