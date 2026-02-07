@@ -14,7 +14,6 @@ cta:
   title: "＼ IT・Web・ゲーム業界特化 ／"
   label: "Geekly公式サイトで詳細を見る"
   microCopy: "※登録は簡単1分程度で完了します"
-  icon: "fa-solid fa-circle-arrow-right"
 ---
 
 <ul data-title="この記事の対象者" class="with-title">

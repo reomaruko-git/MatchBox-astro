@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 
 // ページ固有の設定
 const title = "運営者情報";
-const description = "当サイトの運営者情報です。";
+const description = "Match Boxの運営者情報です。";
 ---
 
 <Layout title={title} description={description}>
@@ -18,39 +18,37 @@ const description = "当サイトの運営者情報です。";
                     <tbody>
                         <tr class="border-b border-slate-100">
                             <th class="py-5 px-4 bg-slate-50 font-bold text-slate-600 w-1/3 rounded-tl-lg">サイト名</th>
-                            <td class="py-5 px-4">[あなたのサイト名を入れる]</td>
+                            <td class="py-5 px-4">Match Box</td>
                         </tr>
                         <tr class="border-b border-slate-100">
                             <th class="py-5 px-4 bg-slate-50 font-bold text-slate-600">運営者</th>
-                            <td class="py-5 px-4">[あなたの名前 または 屋号]</td>
+                            <td class="py-5 px-4">Cat Hack Studio</td>
                         </tr>
                         <tr class="border-b border-slate-100">
                             <th class="py-5 px-4 bg-slate-50 font-bold text-slate-600">所在地</th>
                             <td class="py-5 px-4">
-                                〒000-0000<br>
-                                [都道府県・市区町村・番地など]<br>
-                                <span class="text-xs text-slate-400">※バーチャルオフィスの場合はその住所</span>
-                            </td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <th class="py-5 px-4 bg-slate-50 font-bold text-slate-600">お問い合わせ</th>
-                            <td class="py-5 px-4">
-                                [メールアドレス]<br>
-                                <span class="text-xs text-slate-500">※お問い合わせはメールにてお願いいたします。</span>
+                                福岡県福岡市
                             </td>
                         </tr>
                         <tr>
                             <th class="py-5 px-4 bg-slate-50 font-bold text-slate-600 rounded-bl-lg">事業内容</th>
                             <td class="py-5 px-4">
-                                インターネット広告事業<br>
-                                メディア運営事業
+                                 Webメディア運営事業<br>
+                                インターネット広告事業
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <th class="py-5 px-4 bg-slate-50 font-bold text-slate-600">お問い合わせ</th>
+                            <td class="py-5 px-4">
+                                当サイトに関するお問い合わせは<a href="https://ssl.form-mailer.jp/fms/ca8614db871945" class="text-primary hover:underline font-bold" target="_blank">こちら</a><br>
+                                <span class="text-xs text-slate-500">「Match Box」宛と入力お願いします。</span>
                             </td>
                         </tr>
                     </tbody>
                 </table>
 
                 <div class="mt-10 text-center">
-                    <a href="/" class="text-primary hover:underline font-bold">← トップページへ戻る</a>
+                    <a href="#" onclick="history.back(); return false;" class="text-primary hover:underline font-bold">← 前のページへ戻る</a>
                 </div>
             </div>
         </div>

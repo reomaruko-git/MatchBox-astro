@@ -4,6 +4,7 @@ const lps = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    heroTitle: z.string().optional(),
     description: z.string().optional(),
     images: z.object({
       mv: z.string().optional(),
@@ -14,6 +15,7 @@ const lps = defineCollection({
       text: z.string(),
       link: z.string(),
     })).optional(),
+    affiliateLink: z.string().optional(),
     // ▲▲▲ ここまで ▲▲▲
     rankings: z.array(z.any()).optional(),
     texts: z.record(z.string()).optional(),

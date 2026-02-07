@@ -1,11 +1,20 @@
 ---
+export interface Props {
+  href: string;
+  title?: string;
+  label?: string;
+  microCopy?: string;
+  color?: string;
+  icon?: string;
+}
+
 const {
   href,
   title = "＼ 1分で完了・非公開求人を確認 ／",
   label = "公式サイトで詳細を見る",
   microCopy = "※登録は簡単1分程度で完了します",
   color = "var(--color-accent)",
-  iconClass = "fa-solid fa-arrow-right",
+  icon = "fa-solid fa-arrow-right",
 } = Astro.props as Props;
 ---
 <div class="cta-container text-center mt-8 mb-4">
@@ -13,7 +22,7 @@ const {
   <a href={href} class="cta-button" target="_blank" rel="noopener noreferrer">
     <span class="absolute inset-0 shiny-effect"></span>
     <span class="relative z-10">
-      <i class={`${iconClass} mr-2`}></i>{label}
+      <i class={`${icon} mr-2`}></i>{label}
     </span>
   </a>
   {microCopy && <span class="text-xs text-gray-500 mt-2 block">{microCopy}</span>}

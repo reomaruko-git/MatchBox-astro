@@ -1,6 +1,7 @@
 ---
 layout: ../../components/templates/TemplateSingle.astro
-title: "<span class='text-4xl md:text-6xl lg:text-7xl'>SIerでの経験は、<span class='text-accent'>もっと高く売れる。</span></span><br><span class='text-lg md:text-3xl block mt-4 font-bold opacity-90 tracking-normal leading-snug'>「年収800万の壁」に阻まれたPMが、<br>技術と経営の“通訳”として評価されるまで</span>"
+title: "SIerでの経験は、もっと高く売れる。｜Beyond Career"
+heroTitle: "<span class='text-4xl md:text-6xl lg:text-7xl'>SIerでの経験は、<span class='text-accent'>もっと高く売れる。</span></span><br><span class='text-lg md:text-3xl block mt-4 font-bold opacity-90 tracking-normal leading-snug'>「年収800万の壁」に阻まれたPMが、<br>技術と経営の“通訳”として評価されるまで</span>"
 description: 「管理職＝技術終了」に悩むSIer出身者へ。元・最終面接官があなたの市場価値を再定義し、選考通過率90%を実現する裏側を公開。
 images: { mv: '/assets/images/lp/beyond-career/mv_beyond-career.jpg' } # 変更：オフィスで腕を組み、窓の外を見つめる30代男性の背中（哀愁と野心）
 colors:
@@ -14,7 +15,6 @@ cta:
   title: "＼ 1分で完了・非公開求人を確認 ／"
   label: "無料でキャリア診断を受ける"
   microCopy: "※無理な勧誘は一切ありません"
-  icon: "fa-solid fa-check-circle"
 ---
 
 <ul data-title="この記事はこんな人におすすめです" class="with-title">

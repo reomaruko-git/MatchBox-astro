@@ -55,7 +55,7 @@ const ctaData = data.cta;
       <p class="text-accent font-bold tracking-[0.2em] uppercase mb-5 text-xs md:text-sm bg-black/30 inline-block px-4 py-1 rounded-full border border-white/10 backdrop-blur-md">
         For Professional Engineers
       </p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-relaxed mb-6 text-white drop-shadow-md tracking-tighter [text-wrap:balance]" set:html={data.title} />
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-relaxed mb-6 text-white drop-shadow-md tracking-tighter [text-wrap:balance]" set:html={data.heroTitle || data.title} />
       <p class="text-gray-100 text-sm md:text-lg font-medium leading-relaxed max-w-2xl mx-auto tracking-normal opacity-90 mb-0 md:mb-10">
         {data.description}
       </p>
@@ -96,7 +96,7 @@ const ctaData = data.cta;
                title={ctaData.title}
                label={ctaData.label}
                microCopy={ctaData.microCopy}
-               iconClass={ctaData.icon}
+               icon={ctaData.icon}
                color={colors.accent}
              />
            )}
