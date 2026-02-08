@@ -9,6 +9,7 @@ const data = entry.data;
 
 // ▼ 1. 画像の安全な取得
 const mvImage = data.images?.mv || 'https://placehold.jp/1200x630.png?text=No+Image';
+const mvAlt = data.images?.mvAlt || 'Main Visual';
 
 // ▼ 2. 配色設定の安全な取得
 const defaultColors = {
@@ -37,15 +38,22 @@ const mvMicroCopy = heroCta.microCopy || data.mvMicroCopy || '※登録は無料
 
 // ▼ 追従ボタンの設定（frontmatterで指定がなければデフォルト値を使用）
 const stickyData = data.sticky || {};
+
+// ▼ Canonical URLの生成
+const canonicalUrl = `https://match-box.net/${entry.slug}`;
+
+// ▼ OGP画像の生成（絶対パス化）
+const rawOgImage = data.images?.og || mvImage;
+const ogImageUrl = rawOgImage.startsWith('http') ? rawOgImage : `https://match-box.net${rawOgImage}`;
 ---
 
-<BaseLayout title={data.title} description={data.description} colors={colors} keywords={keywords}>
+<BaseLayout title={data.title} description={data.description} colors={colors} keywords={keywords} canonical={canonicalUrl} ogImage={ogImageUrl}>
 <div class="template-wrapper min-h-screen bg-slate-50 text-txt-main pb-12 md:pb-0">
   
   {/* ▼▼▼ MVセクション ▼▼▼ */}
   <section class="relative min-h-[440px] md:min-h-[560px] flex items-start justify-center overflow-hidden pt-20 pb-28 md:pt-16 md:pb-20">
     <div class="absolute inset-0 z-0">
-      <img src={mvImage} alt="Main Visual" class="w-full h-full object-cover" />
+      <img src={mvImage} alt={mvAlt} class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-[radial-gradient(#ffffff_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-20"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/60 to-gray-900/30"></div>
     </div>

@@ -10,6 +10,8 @@ const lps = defineCollection({
     description: z.string().optional(),
     images: z.object({
       mv: z.string().optional(),
+      mvAlt: z.string().optional(),
+      og: z.string().optional(),
     }).optional(),
     colors: z.record(z.string()).optional(),
     // ▼▼▼ この定義がないとMarkdownのkeywordsが読み込まれません ▼▼▼
