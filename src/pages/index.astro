@@ -16,22 +16,19 @@ const colors = { primary: '#1e3a8a', accent: '#ea580c' };
     
     <header class="mb-20 text-center flex flex-col items-center">
       {/* ロゴとタイトルのコンテナ */}
-      <div class="flex items-center justify-center gap-4 mb-4">
+      <h1 class="flex items-center justify-center mb-4">
         {/* ロゴ画像：public/assets/images/ に置いたものを呼び出し */}
         <img 
           src="/assets/images/logo.svg" 
-          alt="MatchBox Logo" 
-          class="w-10 h-10 md:w-14 md:h-14 object-contain"
+          alt="MatchBox" 
+          class="w-30 h-30 md:w-40 md:h-40 object-contain"
         />
-        <h1 class="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter">
-          MatchBox
-        </h1>
-      </div>
+      </h1>
 
       <div class="h-1 w-24 bg-accent mb-6"></div>
       
       <p class="text-slate-500 font-medium tracking-widest uppercase text-xs md:text-sm">
-        Total Assets: <span class="text-slate-900 font-bold">{allLps.length}</span> Landing Pages
+        コンテンツ: <span class="text-slate-900 font-bold">{allLps.length}</span> 件
       </p>
     </header>
 
@@ -60,7 +57,7 @@ const colors = { primary: '#1e3a8a', accent: '#ea580c' };
               {lp.data.description}
             </p>
             <div class="mt-auto flex items-center text-[10px] font-black text-primary uppercase tracking-[0.2em]">
-              Explore Project <i class="fa-solid fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform duration-300"></i>
+              ページの詳細へ <i class="fa-solid fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform duration-300"></i>
             </div>
           </div>
         </a>
