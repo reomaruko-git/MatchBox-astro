@@ -45,7 +45,7 @@ sticky:
   </a>
 </div>
 
-<img src="/assets/images/lp/mba-laundering/img01.png" alt="戦略的進学" loading="lazy">
+<img src="/assets/images/lp/mba-laundering/img01.webp" alt="戦略的進学" loading="lazy">
 
 ## 「35歳」は限界ではない。キャリアの分岐点だ。
 
