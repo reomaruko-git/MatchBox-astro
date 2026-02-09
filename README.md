@@ -33,8 +33,9 @@ npm run dev
 ```text
 /
 ├── public/             # 静的ファイル（画像、faviconなど）
-│   └── assets/images/  # サイト内で使用する画像
 ├── src/
+│   ├── assets/         # アセットファイル
+│   │   └── images/     # サイト内で使用する画像（自動最適化されます）
 │   ├── components/     # Astroコンポーネント
 │   │   └── templates/  # LP用テンプレート（Single, Comparisonなど）
 │   ├── content/        # コンテンツコレクション
@@ -65,9 +66,9 @@ title: "ページのタイトル"
 description: "メタディスクリプション"
 heroTitle: "MVのキャッチコピー"
 images:
-  mv: "/assets/images/lp/new-lp/mv.jpg"
+  mv: "../../assets/images/lp/new-lp/mv.jpg" # src/assets/images/ からの相対パス
   mvAlt: "MVの代替テキスト"
-  og: "/assets/images/lp/new-lp/ogp.png"
+  og: "../../assets/images/lp/new-lp/ogp.png"
 colors:
   primary: "#1e3a8a"
   accent: "#ea580c"

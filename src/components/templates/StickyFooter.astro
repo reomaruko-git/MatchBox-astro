@@ -28,6 +28,28 @@ const accentColor = safeColors.accent || '#F39C12';
   </div>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.querySelector('.cta-banner');
+    const target = document.getElementById('mv-cta-button');
+
+    if (!banner || !target) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // MVボタンが画面外に出たら表示、画面内に入ったら非表示
+        if (!entry.isIntersecting) {
+          banner.classList.add('is-visible');
+        } else {
+          banner.classList.remove('is-visible');
+        }
+      });
+    }, { rootMargin: '0px', threshold: 0 });
+
+    observer.observe(target);
+  });
+</script>
+
 <style is:global>
   .cta-banner {
     position: fixed;
@@ -40,8 +62,14 @@ const accentColor = safeColors.accent || '#F39C12';
     border-top: 1px solid #e5e7eb;
     padding: 12px;
     padding-bottom: 12px;
-    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+    transition: transform 0.3s ease-out, padding-bottom 0.3s ease-out;
     z-index: 50;
+    transform: translateY(120%); /* 初期状態は隠す */
+  }
+
+  .cta-banner.is-visible {
+    transform: translateY(0); /* クラス付与時に表示 */
   }
 
   .cta-container {

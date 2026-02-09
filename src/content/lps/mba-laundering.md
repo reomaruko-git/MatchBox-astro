@@ -20,7 +20,7 @@ heroCta:
   microCopy: "※今の実力で狙える大学院を知る"
 affiliateLink: "https://www.rentracks.jp/adx/r.html?idx=0.71657.374964.10380.14817&dna=169329"
 cta:
-  title: "あなたのキャリアは、もっと高く評価されるべき"
+  title: "あなたのキャリアは、高く評価されるべき"
   label: "公式サイトで無料相談"
   microCopy: "※登録は1分で完了"
 sticky:
