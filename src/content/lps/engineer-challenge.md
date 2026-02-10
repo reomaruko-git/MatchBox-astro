@@ -12,6 +12,7 @@ colors:
   primary: "#0056b3"
   accent: "#fca311"
 rankings: []
+canonical: "https://match-box.net/engineer-challenge/"
 keywords:
   - text: "Enjoy Tech!"
     link: "/link/engineer-challenge/"

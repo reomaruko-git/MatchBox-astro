@@ -12,6 +12,7 @@ colors:
   primary: "#1e3a8a"
   accent: "#ea580c"
 rankings: []
+canonical: "https://match-box.net/mba-laundering/"
 keywords:
   - text: "MBAロンダリング"
     link: "/link/mba-laundering/"
