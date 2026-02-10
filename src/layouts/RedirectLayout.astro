@@ -5,6 +5,10 @@ const {
   affiliateUrl = "#",
 } = Astro.props;
 
+// URLからスラッグ（パスの末尾）を取得して表示名とする
+const pathname = Astro.url.pathname.replace(/\/$/, "");
+const displayTitle = pathname.split("/").pop() || pageTitle;
+
 // ★ プロダクション環境（本番）かどうかを判定
 const isProd = import.meta.env.PROD;
 ---
@@ -15,16 +19,16 @@ const isProd = import.meta.env.PROD;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>{pageTitle} へ移動中 | Match Box</title>
+    <title>{displayTitle} へ移動中 | Match Box</title>
 
     {isProd && (
       <>
         {/* ★ 本番環境のみ dataLayer を送信 */}
-        <script is:inline define:vars={{ pageTitle }}>
+        <script is:inline define:vars={{ displayTitle }}>
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
             event: "redirect_start",
-            affiliate_name: pageTitle,
+            affiliate_name: displayTitle,
           });
         </script>
 
@@ -81,7 +85,7 @@ const isProd = import.meta.env.PROD;
     {/* ★ 本番環境のみ noscript を読み込み */}
     {isProd && (
       <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5MFTFR3" 
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PW3KRHH" 
                 height="0" width="0" style="display: none; visibility: hidden">
         </iframe>
       </noscript>
@@ -89,7 +93,7 @@ const isProd = import.meta.env.PROD;
 
     <div class="loading-container">
       <p style="color: #11225c; font-size: 1.1rem; margin-bottom: 1rem; font-weight: bold;">
-        {pageTitle} へ移動しています...
+        {displayTitle} へ移動しています...
       </p>
 
       <div class="loading-text">
