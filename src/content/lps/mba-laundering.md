@@ -2,7 +2,7 @@
 template: ../../components/templates/TemplateSingle.astro
 title: "35歳からのキャリア再構築。働きながら3ヶ月で国内MBAを目指す「戦略的進学」ガイド"
 heroTitle: "<span class='text-5xl md:text-7xl lg:text-8xl'>働きながら<br><span class='text-accent'>学歴という<br class='md:hidden'>評価軸を整える</span></span><br><span class='text-xl md:text-3xl block mt-6 font-bold opacity-90 tracking-normal leading-snug'>3ヶ月で最終学歴を更新する</span>"
-badge: "For Ambitious Business Person"
+# badge: "For Ambitious Business Person"
 description: "実力はあるのに書類で落ちるあなたへ。国内難関MBAを「キャリアの武器」として最短3ヶ月で手に入れる、現役会社員のための戦略的受験プログラム。"
 images:
   mv: "../../assets/images/lp/mba-laundering/mv_mba-laundering.webp"

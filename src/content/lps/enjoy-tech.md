@@ -2,7 +2,7 @@
 template: ../../components/templates/TemplateSingle.astro
 title: "Enjoy Tech!（エンジョイテック）| 挫折経験者こその月額制スクール"
 heroTitle: "<span class='text-[42px] md:text-7xl lg:text-8xl'>挫折経験者こそ、<br><span class='text-accent'>成功を目指せる</span></span><br><span class='text-xl md:text-3xl block mt-6 font-bold opacity-90 tracking-normal leading-snug'>月額制・延長サポートで安心の再挑戦。<br>Enjoy Tech!</span>"
-badge: "Re-Challenge & Career Up"
+# badge: "Re-Challenge & Career Up"
 description: "月額制・延長サポートで納得いくまで学べる。あなた専用カリキュラムでWebデザイン・プログラミングを習得。社会人の副業、学生の就活まで手厚くサポート。"
 images:
   mv: "../../assets/images/lp/enjoy-tech/mv.webp"

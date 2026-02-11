@@ -2,7 +2,7 @@
 template: ../../components/templates/TemplateSingle.astro
 title: "上場企業グループ運営。IT・機電エンジニア特化の「直請け」フリーランスエージェント"
 heroTitle: "<span class='text-5xl md:text-7xl lg:text-8xl'>あなたの単価<br><span class='text-accent'>中間で何割抜かれてる？</span><br><span class='text-lg md:text-2xl block mt-6 font-normal opacity-90 tracking-normal leading-relaxed'>中抜きゼロ。<br>上場企業Gが直接紹介。</span>"
-badge: "For IT & Mechatronics Engineers"
+# badge: "For IT & Mechatronics Engineers"
 description: "【中間マージンを削減】旧アウトソーシングテクノロジー運営のエンジニア特化型エージェント。IT・機電領域の「エンド直」案件で、あなたの市場価値を正しく評価します。"
 images:
   mv: "../../assets/images/lp/enbest/mv.webp"
@@ -10,14 +10,14 @@ images:
   og: "../../assets/images/lp/enbest/ogp.png"
 colors:
   primary: "#544e4e"
-  accent: "#dd3f13" 
+  accent: "#d74a24" 
 rankings: []
 keywords:
   - text: "Enbest（エンベスト）"
     link: "/link/enbest/"
 heroCta:
-  label: "現在の適正単価を無料診断"
-  microCopy: "※非公開の「直請け」案件を見る"
+  label: "希望条件で「非公開案件」を探す"
+  microCopy: "※高単価な直請け案件のみを表示"
 affiliateLink: "https://www.rentracks.jp/adx/r.html?idx=0.71657.374964.10199.14564&dna=166769"
 cta:
   title: "フリーランスに、大企業の「安心」を。"
@@ -75,5 +75,5 @@ sticky:
 
 これら面倒な業務は、すべてプロにお任せしてください。あなたは<span class="font-bold">「技術」</span>に集中するだけです。
 
-無理な勧誘は一切ありません。あなたの市場価値を、<a href="/link/enbest/">Enbest（エンベスト）</a>で確認してください。
+無理な勧誘は一切ありません。市場価値を、<a href="/link/enbest/">Enbest（エンベスト）</a>で確認してください。
 <img src="https://www.rentracks.jp/adx/p.gifx?idx=0.71657.374964.10199.14564&dna=166769" border="0" height="1" width="1">
