@@ -14,7 +14,7 @@ rankings: []
 canonical: "https://match-box.net/quickpaper/"
 keywords:
   - text: "QuickPaper"
-    link: "https://www.rentracks.jp/adx/r.html?idx=0.71657.374964.10865.15517&dna=176133"
+    link: "/link/quickpaper/"
 heroCta:
   label: "明日使える資料を探す"
   microCopy: "※登録不要で構成・アウトラインが見放題"
@@ -97,6 +97,8 @@ B2Bの実務に耐えうる品質か？
 その不安を払拭するため、QuickPaperでは<span class="font-bold text-slate-900">購入前に「構成案（アウトライン）」と「切り口」をすべて確認可能</span>です。
 
 メールアドレスの登録すら不要で、ミスマッチのリスクを極限までゼロに近づけています。
+
+<img src="/link/quickpaper/" border="0" height="1" width="1"><a href="https://www.rentracks.jp/adx/r.html?idx=0.71657.374964.10865.15517&dna=176188" rel="nofollow noopener" target="_blank"><img src="https://www.image-rentracks.com/15517/300_250.png" width="300" height="250" border="0"></a>
 
 ## 機会損失を防ぎ、成果を最大化する。
 
