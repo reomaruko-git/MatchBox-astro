@@ -287,7 +287,24 @@ const GTM_ID = "GTM-5PW3KRHH";
         font-weight: 700;
         color: var(--color-primary);
       }
-      .prose li {
+      .prose ol {
+        background-color: color-mix(in srgb, var(--color-primary) 5%, white);
+        padding: 1.5rem 1.5rem 1.5rem 3.5rem;
+        border-radius: 12px;
+        list-style: decimal;
+      }
+      .prose ol li {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        padding-left: 0.5rem;
+      }
+      .prose ol li::marker {
+        color: var(--color-primary);
+        font-weight: 900;
+      }
+
+      .prose ul li {
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
         padding-left: 1.5rem;
@@ -296,10 +313,10 @@ const GTM_ID = "GTM-5PW3KRHH";
         border-bottom: 1px dashed color-mix(in srgb, var(--color-primary) 30%, transparent);
         padding-bottom: 0.5rem;
       }
-      .prose li:last-child {
+      .prose ul li:last-child {
         border-bottom: none;
       }
-      .prose li::before {
+      .prose ul li::before {
         content: "\f00c";
         font-family: "Font Awesome 6 Free";
         position: absolute;
