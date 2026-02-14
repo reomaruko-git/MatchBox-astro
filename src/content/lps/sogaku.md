@@ -9,7 +9,7 @@ images:
   og: "../../assets/images/lp/sogaku/ogp.png"
 colors:
   primary: "#0D9488"
-  accent: "#f9a616"
+  accent: "#f5980e"
 rankings: []
 canonical: "https://match-box.net/sogaku/"
 keywords:
