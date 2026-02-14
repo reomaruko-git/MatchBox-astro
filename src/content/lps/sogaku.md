@@ -2,7 +2,7 @@
 template: ../../components/templates/TemplateSingle.astro
 title: "発達障害・グレーゾーン専門のオンライン家庭教師。プロ講師が「勉強」と「自信」を育みます。"
 heroTitle: "<span class='text-5xl md:text-7xl lg:text-8xl tracking-tighter'>お子様<span class='text-4xl md:text-7xl'>の</span><br><span class='text-accent'>個性<span class='text-4xl md:text-7xl'>に</span>合わせた<br class='md:hidden'>学び方</span><br><span class='text-lg md:text-2xl block mt-6 font-bold opacity-90 tracking-normal leading-snug'>発達障害・グレーゾーン専門<br>プロ講師が「できた！」を引き出します</span>"
-description: "研修を受けた社会人プロ講師のみが担当。研修を受けた専任プロ講師が、お子様の「特性」に合わせた指導で学習習慣を定着させます。まずは無料体験レッスン（2回）で変化を実感してください。"
+description: "研修を受けた社会人プロ講師が専任担当。お子様の「特性」に合わせた指導で、学習習慣の定着をサポートします。まずは2回の無料体験で、変化を実感してください。"
 images:
   mv: "../../assets/images/lp/sogaku/mv.webp"
   mvAlt: "笑顔でタブレット越しに会話する子供と優しく見守る母親"
@@ -13,11 +13,11 @@ colors:
 rankings: []
 canonical: "https://match-box.net/sogaku/"
 keywords:
-  - text: "相学"
+  - text: "ソウガク"
     link: "https://www.rentracks.jp/adx/r.html?idx=0.71657.374964.8153.15164&dna=172854"
 heroCta:
   label: "無料体験レッスンを予約する"
-  microCopy: "※今なら入会金半額キャンペーン中"
+  microCopy: "※現在、入会金半額キャンペーン中"
 affiliateLink: "https://www.rentracks.jp/adx/r.html?idx=0.71657.374964.8153.15164&dna=172854"
 cta:
   title: "お子様の「できた！」という自信を育みます"
@@ -26,7 +26,7 @@ cta:
 sticky:
   text: "まずは2回の無料体験で相性を確認"
   label: "公式サイトで詳細を見る"
-  microCopy: "※無理な勧誘は一切ありません"
+  microCopy: "※講師は専属担任制"
 ---
 
 ## 勉強のことで、つい叱ってしまう。その悩み、一人で抱えていませんか？
@@ -57,7 +57,7 @@ sticky:
   </a>
 </div>
 
-## 「相学（Sogaku）」の解決策。
+## 「ソウガク」の解決策。
 
 <div class="space-y-4 my-10">
   <div class="bg-white p-5 rounded-lg border border-slate-400 shadow-sm">
@@ -77,12 +77,12 @@ sticky:
 ## まずは「2回」じっくり試してください。
 
 「また合わなかったらどうしよう…」。<br>
-相学では<span class="font-bold text-slate-900">無料体験レッスンを2回まで</span>受講できます。
+ソウガクでは<span class="font-bold text-slate-900">無料体験レッスンを2回まで</span>受講できます。
 <img src="http://www.rentracks.jp/adx/p.gifx?idx=0.71657.374964.8153.15164&dna=173054" border="0" height="1" width="1"><a href="http://www.rentracks.jp/adx/r.html?idx=0.71657.374964.8153.15164&dna=173054" rel="nofollow noopener" target="_blank"><img src="http://www.image-rentracks.com/15164/300_250.png" width="300" height="250" border="0"></a>
 
 ## お子様の未来は、環境一つで大きく広がります。
 
-相学（Sogaku）で、お子様の「わかった！」という笑顔を取り戻しませんか？
+ソウガクで、お子様の「わかった！」という笑顔を取り戻しませんか？
 
 まずは無料体験で、プロの指導力を体感してください。<br>
 無理な勧誘は一切ございません。
