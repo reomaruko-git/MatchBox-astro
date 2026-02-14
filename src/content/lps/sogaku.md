@@ -14,7 +14,7 @@ rankings: []
 canonical: "https://match-box.net/sogaku/"
 keywords:
   - text: "ソウガク"
-    link: "https://www.rentracks.jp/adx/r.html?idx=0.71657.374964.8153.15164&dna=172854"
+    link: "/link/sogaku/"
 heroCta:
   label: "無料体験レッスンを予約する"
   microCopy: "※現在、入会金半額キャンペーン中"
@@ -52,7 +52,7 @@ sticky:
 </div>
 
 <div class="my-8">
-  <a href="https://www.rentracks.jp/adx/r.html?idx=0.71657.374964.8153.15164&dna=172854" class="text-primary font-bold underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-all">
+  <a href="/link/sogaku/" class="text-primary font-bold underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-all">
     >> お子様の特性に合った学習支援の詳細を見る
   </a>
 </div>
@@ -78,7 +78,7 @@ sticky:
 
 「また合わなかったらどうしよう…」。<br>
 ソウガクでは<span class="font-bold text-slate-900">無料体験レッスンを2回まで</span>受講できます。
-<img src="http://www.rentracks.jp/adx/p.gifx?idx=0.71657.374964.8153.15164&dna=173054" border="0" height="1" width="1"><a href="http://www.rentracks.jp/adx/r.html?idx=0.71657.374964.8153.15164&dna=173054" rel="nofollow noopener" target="_blank"><img src="http://www.image-rentracks.com/15164/300_250.png" width="300" height="250" border="0"></a>
+<img src="http://www.rentracks.jp/adx/p.gifx?idx=0.71657.374964.8153.15164&dna=173054" border="0" height="1" width="1"><a href="/link/sogaku/" rel="nofollow noopener" target="_blank"><img src="http://www.image-rentracks.com/15164/300_250.png" width="300" height="250" border="0"></a>
 
 ## お子様の未来は、環境一つで大きく広がります。
 
@@ -89,9 +89,8 @@ sticky:
 
 
 <div class="my-10">
-  <a href="https://www.rentracks.jp/adx/r.html?idx=0.71657.374964.8153.15164&dna=172854" class="text-primary font-bold underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-all text-xl">
+  <a href="/link/sogaku/" class="text-primary font-bold underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-all text-xl">
     >> 無料体験レッスン（2回）を予約する
   </a>
   <p class="text-xs mt-3 text-slate-500">※お申し込みは1分で完了します</p>
 </div>
-<img src="https://www.rentracks.jp/adx/p.gifx?idx=0.71657.374964.8153.15164&dna=172854" border="0" height="1" width="1">
