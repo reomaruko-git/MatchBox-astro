@@ -1,7 +1,7 @@
 ---
 template: ../../components/templates/TemplateSingle.astro
 title: "電話連絡なし。LINE完結で進める「静かなる」看護師転職活動"
-heroTitle: "<span class='text-5xl md:text-6xl lg:text-7xl tracking-tighter'>電話連絡<span class='text-4xl md:text-6xl'>は</span>原則なし。<br><span class='text-accent'>LINE<span class='text-4xl md:text-6xl'>だけで</span>進<span class='text-4xl md:text-6xl'>む</span>転職活動。</span></span><br><span class='text-lg md:text-2xl block mt-6 font-bold opacity-80 tracking-normal leading-snug'>上場医療グループ運営。強引な勧誘なし。<br>LINEで求人を受け取るだけでも利用できます。</span>"
+heroTitle: "<span class='text-5xl md:text-6xl lg:text-7xl tracking-tighter'>電話連絡<span class='text-4xl md:text-6xl'>は</span>原則なし。<br><span class='text-accent'>LINE<span class='text-4xl md:text-6xl'>だけで</span>進<span class='text-4xl md:text-6xl'>む</span>転職活動。</span></span><br><span class='text-lg md:text-2xl block mt-6 font-bold opacity-80 tracking-normal leading-snug'>上場医療グループ運営。強引な勧誘なし。<br>登録後の連絡は、LINEのみ。電話はかかってきません。</span>"
 description: "「登録直後の電話ラッシュ」に疲弊したあなたへ。リーパスナースは原則電話連絡を行わず、LINE中心で希望に沿った求人を提案します。"
 images:
   mv: "../../assets/images/lp/repath-nurse/mv.webp"
@@ -16,12 +16,12 @@ keywords:
   - text: "リーパスナース"
     link: "/link/repath-nurse/"
 heroCta:
-  label: "LINEで求人情報を確認する"
+  label: "公式サイトで詳細を見る"
   microCopy: "※電話連絡なし / 登録は1分で完了"
 affiliateLink: "https://www.rentracks.jp/adx/r.html?idx=0.71657.374964.10190.14550&dna=166734"
 cta:
   title: "あなたのペースで、理想の職場へ"
-  label: "非公開求人をLINEで見る"
+  label: "非公開求人を見てみる"
   microCopy: "※無理な勧誘は行いません"
 sticky:
   text: "電話なし。LINEで完結する転職活動"
@@ -46,7 +46,7 @@ sticky:
 ## このような方に、最適な選択肢です。
 
 リーパスナースは、特に以下のような希望をお持ちの看護師に選ばれています。
-<a href="https://www.rentracks.jp/adx/r.html?idx=0.71657.374964.10190.14550&dna=167219" rel="nofollow noopener" target="_blank"><img src="https://www.image-rentracks.com/14550/1280_560.png" width="1280" height="560" border="0"></a>
+<a href="/link/repath-nurse/" rel="nofollow noopener" target="_blank"><img src="https://www.image-rentracks.com/14550/1280_560.png" width="1280" height="560" border="0"></a>
 
 * <span class="font-bold text-primary">自分のペースを維持したい:</span> 業務中や夜勤明けの電話対応を避けたい方。
 * <span class="font-bold text-primary">ワークライフバランス重視:</span> 日勤のみ、土日休みなど、生活リズムを整えたい方。
