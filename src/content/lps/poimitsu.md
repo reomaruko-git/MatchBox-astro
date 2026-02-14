@@ -61,14 +61,14 @@ sticky:
 安心してご利用いただくために、あえて<span class="font-bold text-accent">「アナログな確認工程」</span>を設けています。
 
 <div class="space-y-8 mt-8">
-  <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+  <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
     <h3 class="text-xl font-bold text-slate-900 mb-0 !mt-3 !border-0 !pb-0 !pl-0">1. 厳格な加盟店審査</h3>
     <p class="text-slate-700 leading-relaxed">
       不法投棄や不当請求を行う業者は提携をお断りしています。古物商許可や廃棄物収集運搬許可など、適切な許認可を持つ優良業者のみと提携しています。
     </p>
   </div>
 
-  <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+  <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
     <h3 class="text-xl font-bold text-slate-900 mb-0 !mt-3 !border-0 !pb-0 !pl-0">2. 電話による本人確認と詳細ヒアリング</h3>
     <p class="text-slate-700 leading-relaxed">
       Webフォーム送信後、提携業者またはサポートセンターより<span class="font-bold text-accent">お電話にて内容の確認</span>を行わせていただきます。
@@ -79,7 +79,7 @@ sticky:
     </p>
   </div>
 
-  <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+  <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
     <h3 class="text-xl font-bold text-slate-900 mb-0 !mt-3 !border-0 !pb-0 !pl-0">3. ゴミ屋敷・遺品整理・空き家にも対応</h3>
     <p class="text-slate-700 leading-relaxed">
       一般的な不用品回収だけでなく、専門的な知識を要する遺品整理や、大規模なゴミ屋敷清掃、空き家の残置物撤去まで対応可能です。
