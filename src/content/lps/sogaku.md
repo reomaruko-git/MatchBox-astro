@@ -1,7 +1,7 @@
 ---
 template: ../../components/templates/TemplateSingle.astro
 title: "発達障害・グレーゾーン専門のオンライン家庭教師。プロ講師が「勉強」と「自信」を取り戻す。"
-heroTitle: "<span class='text-4xl md:text-6xl lg:text-7xl tracking-tighter'>勉強の遅れは、<br><span class='text-accent'>お子様のせいではありません。</span></span><br><span class='text-lg md:text-2xl block mt-6 font-bold opacity-80 tracking-normal leading-snug'>発達障害・グレーゾーン専門<br>社会人プロ講師による「理解」と「伴走」</span>"
+heroTitle: "<span class='text-5xl md:text-7xl lg:text-8xl tracking-tighter'>勉強の遅れは、<br><span class='text-accent'>お子様のせいではありません。</span></span><br><span class='text-lg md:text-2xl block mt-6 font-bold opacity-90 tracking-normal leading-snug'>発達障害・グレーゾーン専門<br>プロ講師が「できた！」を取り戻す</span>"
 description: "学生バイトお断り。研修を受けた専任プロ講師が、お子様の「特性」に合わせた指導で学習習慣を定着させます。まずは無料体験レッスン（2回）で変化を実感してください。"
 images:
   mv: "../../assets/images/lp/sogaku/mv.webp"
