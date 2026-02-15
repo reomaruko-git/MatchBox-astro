@@ -1,0 +1,185 @@
+---
+// src/components/templates/TemplateBanner.astro
+// 商品紹介LP用テンプレート：ファーストビュー直下にアピールサイトのバナー（300x250）を配置
+import ArticleCta from './ArticleCta.astro';
+import StickyFooter from './StickyFooter.astro';
+import BaseLayout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+const { entry, Content } = Astro.props;
+const data = entry.data;
+
+// --- 1. 画像の安全な取得 ---
+const mvImage = data.images?.mv || 'https://placehold.jp/1200x630.png?text=No+Image';
+const mvAlt = data.images?.mvAlt || 'Main Visual';
+
+// --- 2. Canonical URLの生成 ---
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// --- 3. OGP画像の生成 ---
+const ogImage = data.images?.og || mvImage;
+let ogImageUrl;
+if (typeof ogImage === 'string') {
+  ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site).href;
+} else {
+  ogImageUrl = new URL(ogImage.src, Astro.site).href;
+}
+
+// --- 4. 配色・リンク設定 ---
+const defaultColors = {
+  primary: '#1e3a8a',
+  secondary: '#eeeeee',
+  accent: '#ea580c',
+  txtMain: '#333333',
+  link: '#2563eb',
+};
+const colors = { ...defaultColors, ...(data.colors || {}) };
+const affiliateLink = `/link/${entry.slug}/`;
+const keywords = [
+  ...(data.title ? [{ text: data.title, link: affiliateLink }] : []),
+  ...(data.keywords || [])
+];
+
+const ctaData = data.cta;
+const mvMicroCopy = data.heroCta?.microCopy || data.mvMicroCopy || '※登録は無料・1分で完了します';
+const stickyData = data.sticky || {};
+
+// ★ CVボタンの色を一律緑色に設定
+const cvButtonColor = '#00A968';
+
+// --- 5. バナー設定 ---
+const banner = data.banner || null;
+const bannerWidth = banner?.width || 300;
+const bannerHeight = banner?.height || 250;
+const bannerAlt = banner?.alt || '公式サイトで詳細を見る';
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  colors={colors}
+  keywords={keywords}
+  canonical={canonicalURL}
+  ogImage={ogImageUrl}
+>
+  <div class="template-wrapper min-h-screen bg-slate-50 text-txt-main md:pb-0">
+
+    {/* ===== ヒーローセクション ===== */}
+    <section class="relative min-h-[340px] md:min-h-[560px] flex items-start justify-center overflow-hidden pt-[40px] pb-20 md:pt-16 md:pb-20">
+      <div class="absolute inset-0 z-0">
+        {typeof mvImage === 'string' ? (
+          <img src={mvImage} alt={mvAlt} class="w-full h-full object-cover animate-fade-in" />
+        ) : (
+          <Image src={mvImage} alt={mvAlt} class="w-full h-full object-cover animate-fade-in" loading="eager" />
+        )}
+        <div class="absolute inset-0 bg-[radial-gradient(#ffffff_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/60 to-gray-900/30"></div>
+      </div>
+
+      <div class="relative z-10 container max-w-6xl mx-auto px-6 text-center">
+        {data.badge && (
+          <p class="text-accent font-bold tracking-[0.2em] uppercase mb-5 text-xs md:text-sm bg-black/30 inline-block px-4 py-1 rounded-full border border-white/10 backdrop-blur-md animate-fade-in-up delay-100">
+            {data.badge}
+          </p>
+        )}
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-white drop-shadow-md tracking-tighter [text-wrap:balance] [font-feature-settings:'palt'] animate-fade-in-up delay-300" set:html={data.heroTitle || data.title} />
+        <p class="text-gray-100 text-base md:text-xl font-medium leading-relaxed max-w-2xl mx-auto tracking-normal opacity-90 mb-0 md:mb-10 animate-fade-in-up delay-500">
+          {data.description}
+        </p>
+      </div>
+    </section>
+
+    {/* ===== バナーセクション（ファーストビュー直下） ===== */}
+    {banner && (
+      <section class="relative z-20 -mt-10 mb-0">
+        <div class="max-w-3xl mx-auto flex flex-col items-center px-4">
+          <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 flex flex-col items-center ring-1 ring-black/5">
+            {banner.trackingPixel && (
+              <img src={banner.trackingPixel} border="0" height="1" width="1" alt="" class="absolute" />
+            )}
+
+            <a href={affiliateLink} class="relative shiny-effect transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:opacity-90 shadow-lg rounded-xl overflow-hidden inline-block">
+              <img
+                src={banner.src}
+                width={bannerWidth}
+                height={bannerHeight}
+                alt={bannerAlt}
+                class={`w-[${bannerWidth}px] h-[${bannerHeight}px]`}
+                border="0"
+                loading="eager"
+              />
+            </a>
+
+            <p class="text-xs text-gray-500 mt-4 tracking-wide font-medium">
+              {mvMicroCopy}
+            </p>
+          </div>
+        </div>
+      </section>
+    )}
+
+    {/* ===== 記事コンテンツ ===== */}
+    <main class={`relative z-20 px-0 md:px-4 pb-12 ${banner ? 'mt-8' : '-mt-16'}`}>
+      <div class="max-w-3xl mx-auto">
+        <article class="bg-white rounded-none md:rounded-[2rem] shadow-xl overflow-hidden ring-1 ring-black/5">
+          <div class="p-8 md:p-14">
+             <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed prose-p:tracking-normal">
+                <Content />
+             </div>
+
+             {ctaData && (
+               <ArticleCta
+                 href={affiliateLink}
+                 title={ctaData.title}
+                 label={ctaData.label}
+                 microCopy={ctaData.microCopy}
+                 icon={ctaData.icon}
+                 color={cvButtonColor}
+               />
+             )}
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <StickyFooter
+      link={affiliateLink}
+      text={stickyData.text}
+      label={stickyData.label}
+      microCopy={stickyData.microCopy}
+      colors={{ ...colors, accent: cvButtonColor }}
+    />
+  </div>
+</BaseLayout>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 2s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-700 { animation-delay: 0.7s; }
+</style>

@@ -5,6 +5,7 @@ import type { CollectionEntry } from 'astro:content';
 
 // テンプレートの読み込み
 import TemplateSingle from '../components/templates/TemplateSingle.astro';
+import TemplateBanner from '../components/templates/TemplateBanner.astro';
 // import TemplateRanking from '../components/templates/TemplateRanking.astro'; // 必要に応じて追加
 
 // 1. 全てのLP記事を取得してパスを生成
@@ -23,13 +24,14 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-// 2. フロントマターの layout 指定に応じてテンプレートを切り替え
+// 2. フロントマターの pageLayout 指定に応じてテンプレートを切り替え
 const layoutMap: Record<string, any> = {
   single: TemplateSingle,
+  banner: TemplateBanner,
   // ranking: TemplateRanking,
 };
 
-const LayoutComponent = layoutMap[entry.data.layout] || TemplateSingle;
+const LayoutComponent = layoutMap[entry.data.pageLayout] || TemplateSingle;
 ---
 
 <LayoutComponent entry={entry} Content={Content} />

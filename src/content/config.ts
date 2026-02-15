@@ -6,6 +6,7 @@ const lps = defineCollection({
   schema: ({ image }) => z.object({
     title: z.string(),
     template: z.string().optional(),
+    pageLayout: z.string().optional(),
     heroTitle: z.string().optional(),
     badge: z.string().optional(),
     description: z.string().optional(),
@@ -45,6 +46,14 @@ const lps = defineCollection({
       text: z.string().optional(),
       label: z.string().optional(),
       microCopy: z.string().optional(),
+    }).optional(),
+
+    banner: z.object({
+      src: z.string(),
+      alt: z.string().optional(),
+      width: z.number().optional(),
+      height: z.number().optional(),
+      trackingPixel: z.string().optional(),
     }).optional(),
   }),
 });
