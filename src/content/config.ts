@@ -5,7 +5,6 @@ const lps = defineCollection({
   // schema を関数形式に変更し、ヘルパーの image を取得します
   schema: ({ image }) => z.object({
     title: z.string(),
-    template: z.string().optional(),
     pageLayout: z.string().optional(),
     heroTitle: z.string().optional(),
     badge: z.string().optional(),

@@ -1,5 +1,5 @@
 ---
-template: ../../components/templates/TemplateSingle.astro
+pageLayout: single
 title: "上場企業グループ運営。IT・機電エンジニア特化の「直請け」フリーランスエージェント"
 heroTitle: "<span class='text-5xl md:text-7xl lg:text-8xl'>あなたの単価<br><span class='text-accent'>中間で何割抜かれてる？</span><br><span class='text-lg md:text-2xl block mt-6 font-normal opacity-90 tracking-normal leading-relaxed'>中抜きゼロ。<br>上場企業Gが直接紹介。</span>"
 # badge: "For IT & Mechatronics Engineers"

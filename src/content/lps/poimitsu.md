@@ -1,5 +1,5 @@
 ---
-template: ../../components/templates/TemplateSingle.astro
+pageLayout: single
 title: "不用品回収の「高値掴み」を回避する。最短60秒で最大5社の相場比較"
 heroTitle: "<span class='text-5xl md:text-7xl lg:text-8xl tracking-tighter'>その見積もり、<br><span class='text-accent'>適正価格ですか？</span></span><br><span class='text-lg md:text-2xl block mt-6 font-bold opacity-80 tracking-normal leading-snug'>不用品回収・遺品整理・ゴミ屋敷<br>厳選業者の「相場」を比較して選ぶ</span>"
 description: "不用品回収や遺品整理で損をしたくない方へ。最大5社の見積もりを比較し、あなたに合った納得のプランが見つかる無料一括見積もりサービス。本人確認の電話連絡により、厳選された優良業者のみをご紹介し、精度の高い査定を目指します。"

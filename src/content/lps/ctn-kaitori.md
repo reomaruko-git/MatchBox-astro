@@ -1,5 +1,5 @@
 ---
-template: ../../components/templates/TemplateSingle.astro
+pageLayout: single
 title: "電話ラッシュを回避。高額査定が期待できる厳選3社を比較する売却手法"
 heroTitle: "<span class='text-5xl md:text-6xl lg:text-7xl tracking-tighter'>ディーラー<span class='text-5xl md:text-6xl'>の</span>提示額、<br><span class='text-accent'><span class='text-5xl md:text-6xl'>それが</span>相場<span class='text-5xl md:text-6xl'>とは</span>限りません。</span></span><br><span class='text-lg md:text-2xl block mt-6 font-bold opacity-80 tracking-normal leading-snug'>電話連絡は選定された最大3社のみ。Web入力約60秒で査定依頼が完了します。</span>"
 description: "一括査定における大量の電話連絡を構造的に回避。CTNは独自の審査基準により、あなたの愛車を評価できる専門店3社のみを選定・紹介します。"
