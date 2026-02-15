@@ -1,5 +1,5 @@
 ---
-template: ../../components/templates/TemplateSingle.astro
+pageLayout: single
 title: "制作期間不要。B2Bマーケティングの「コンテンツ調達」シフト| 即戦力ホワイトペーパー"
 heroTitle: "<span class='text-4xl md:text-6xl lg:text-7xl tracking-tighter'>制作は、もうしない。<br><span class='text-accent'>「選んで、配る」</span><br>新しい常識。</span><br><span class='text-lg md:text-2xl block mt-6 font-bold opacity-80 tracking-normal leading-snug'>翌営業日納品・1社限定販売・49,800円<br>B2Bホワイトペーパー調達サービス</span>"
 description: "納期3ヶ月を1日に短縮。1,000タイトル以上の既製ホワイトペーパーから選ぶだけ。1社限定販売で独自性を確保。PowerPoint納品で自社化も自由自在。"

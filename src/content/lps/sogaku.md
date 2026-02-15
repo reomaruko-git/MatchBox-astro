@@ -1,5 +1,5 @@
 ---
-template: ../../components/templates/TemplateSingle.astro
+pageLayout: single
 title: "発達障害・グレーゾーン専門のオンライン家庭教師。プロ講師が「勉強」と「自信」を育みます。"
 heroTitle: "<span class='text-5xl md:text-7xl lg:text-8xl tracking-tighter'>お子様<span class='text-4xl md:text-7xl'>の</span><br><span class='text-accent'>個性<span class='text-4xl md:text-7xl'>に</span>合わせた<br class='md:hidden'>学び方</span><br><span class='text-lg md:text-2xl block mt-6 font-bold opacity-90 tracking-normal leading-snug'>発達障害・グレーゾーン専門<br>プロ講師が「できた！」を引き出します</span>"
 description: "研修を受けた社会人プロ講師が専任担当。お子様の「特性」に合わせた指導で、学習習慣の定着をサポートします。まずは2回の無料体験で、変化を実感してください。"

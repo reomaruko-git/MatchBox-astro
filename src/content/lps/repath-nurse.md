@@ -1,5 +1,5 @@
 ---
-template: ../../components/templates/TemplateSingle.astro
+pageLayout: single
 title: "電話連絡なし。LINE完結で進める「静かなる」看護師転職活動"
 heroTitle: "<span class='text-5xl md:text-6xl lg:text-7xl tracking-tighter'>電話連絡<span class='text-4xl md:text-6xl'>は</span>原則なし。<br><span class='text-accent'>LINE<span class='text-4xl md:text-6xl'>だけで</span>進<span class='text-4xl md:text-6xl'>む</span>転職活動。</span></span><br><span class='text-lg md:text-2xl block mt-6 font-bold opacity-80 tracking-normal leading-snug'>上場医療グループ運営。強引な勧誘なし。<br>登録後の連絡は、LINEのみ。電話はかかってきません。</span>"
 description: "「登録直後の電話ラッシュ」に疲弊したあなたへ。リーパスナースは原則電話連絡を行わず、LINE中心で希望に沿った求人を提案します。"
