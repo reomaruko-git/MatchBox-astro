@@ -24,14 +24,14 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-// 2. フロントマターの layout 指定に応じてテンプレートを切り替え
+// 2. フロントマターの pageLayout 指定に応じてテンプレートを切り替え
 const layoutMap: Record<string, any> = {
   single: TemplateSingle,
   banner: TemplateBanner,
   // ranking: TemplateRanking,
 };
 
-const LayoutComponent = layoutMap[entry.data.layout] || TemplateSingle;
+const LayoutComponent = layoutMap[entry.data.pageLayout] || TemplateSingle;
 ---
 
 <LayoutComponent entry={entry} Content={Content} />
