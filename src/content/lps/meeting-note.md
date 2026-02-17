@@ -1,11 +1,11 @@
 ---
 pageLayout: banner
-title: "会議記録の自動化で、本来の業務に集中する。「PLAUD NOTE」が実現するワークフロー変革"
+title: "会議記録の自動化で、本来の業務に集中する。スマホAIが実現するワークフロー変革"
 heroTitle: "<span class='text-5xl md:text-7xl lg:text-8xl tracking-tighter'>録音<span class='text-4xl md:text-7xl'>するだけで、</span><br><span class='text-accent'>議事録<span class='text-4xl md:text-7xl'>が</span>完成<span class='text-4xl md:text-7xl'>する。</span></span></span><br><span class='text-lg md:text-2xl block mt-6 font-bold opacity-80 tracking-normal leading-snug'>録音から要約まで自動処理。<br>会議後すぐに共有できる状態で届く。</span>"
 description: "会議の記録作業を自動化し、情報の資産化を支援。最新LLMとの連携による高度な文脈理解と要約機能を搭載した、次世代のビジネスツールです。"
 images:
   mv: "../../assets/images/lp/meeting-note/mv.webp"
-  mvAlt: "スマートフォン背面に装着可能なPLAUD NOTEと、アプリ上で生成された議事録データ"
+  mvAlt: "会議している様子"
   og: "../../assets/images/lp/meeting-note/ogp.png"
 colors:
   primary: "#111827"
