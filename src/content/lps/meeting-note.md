@@ -4,19 +4,19 @@ title: "会議記録の自動化で、本来の業務に集中する。「PLAUD 
 heroTitle: "<span class='text-5xl md:text-7xl lg:text-8xl tracking-tighter'>録音<span class='text-4xl md:text-7xl'>するだけで、</span><br><span class='text-accent'>議事録<span class='text-4xl md:text-7xl'>が</span>完成<span class='text-4xl md:text-7xl'>する。</span></span></span><br><span class='text-lg md:text-2xl block mt-6 font-bold opacity-80 tracking-normal leading-snug'>録音から要約まで自動処理。<br>会議後すぐに共有できる状態で届く。</span>"
 description: "会議の記録作業を自動化し、情報の資産化を支援。最新LLMとの連携による高度な文脈理解と要約機能を搭載した、次世代のビジネスツールです。"
 images:
-  mv: "../../assets/images/lp/plaud/mv.webp"
+  mv: "../../assets/images/lp/meeting-note/mv.webp"
   mvAlt: "スマートフォン背面に装着可能なPLAUD NOTEと、アプリ上で生成された議事録データ"
-  og: "../../assets/images/lp/plaud/ogp.png"
+  og: "../../assets/images/lp/meeting-note/ogp.png"
 colors:
   primary: "#111827"
   accent: "#a3a5f8"
 rankings: []
-canonical: "https://yoursite.com/plaud-review/"
+canonical: "https://match-box.net/meeting-note/"
 keywords:
   - text: "PLAUD NOTE"
     link: "#"
   - text: "AIボイスレコーダー"
-    link: "/link/plaud-ai-recorder/"
+    link: "/link/meeting-note/"
 heroCta:
   label: "製品仕様・詳細を確認する"
   microCopy: "※公式サイトへ移動します"
@@ -42,7 +42,7 @@ banner:
 会議後の議事録作成に費やされる時間。<br>言った言わないの確認作業によるタイムロス。<br><br>
 PLAUD NOTE（プラウドノート）は、これらを技術的に解決するために設計されたAIボイスレコーダーです。
 
-[![説明](../../assets/images/lp/plaud/img01.webp)](/link/plaud-ai-recorder/)
+[![説明](../../assets/images/lp/meeting-note/img01.webp)](/link/meeting-note/)
 
 <div class="my-12">
   <div class="flex flex-col md:flex-row gap-4 items-stretch">
