@@ -1,7 +1,7 @@
 ---
 pageLayout: banner
 title: "創業78年。傷のあるブランド品も高価買取。KOMEHYOの「メンテナンス力」という裏付け"
-heroTitle: "<span class='text-5xl md:text-6xl lg:text-7xl tracking-tighter font-serif leading-none md:leading-tight'>その傷、<br><span class='text-accent'>諦めるには早すぎます。</span></span><br><span class='text-lg md:text-2xl block mt-4 md:mt-8 font-bold opacity-80 tracking-normal leading-snug font-sans'>創業78年・東証上場。<br>KOMEHYOが「訳あり」でも高く買える理由。</span>"
+heroTitle: "<span class='text-5xl md:text-6xl lg:text-7xl tracking-tighter font-serif leading-none md:leading-tight' style='font-family: serif !important;'>その傷、<br><span class='text-accent'>諦めるには早すぎます。</span></span><br><span class='text-lg md:text-2xl block mt-4 md:mt-8 font-bold opacity-80 tracking-normal leading-snug font-sans'>創業78年・東証上場。<br>KOMEHYOが「訳あり」でも高く買える理由。</span>"
 description: "「傷があるから売れない」は誤解です。自社メンテナンス部門とグローバルオークションを持つKOMEHYOだからこそ提示できる、納得の査定額があります。"
 images:
   mv: "../../assets/images/lp/komehyo/mv.webp"
