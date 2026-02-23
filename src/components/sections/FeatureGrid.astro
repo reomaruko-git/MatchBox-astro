@@ -1,0 +1,150 @@
+---
+// FeatureGrid.astro - Props対応版
+//
+// 【最小構成】
+//   <FeatureGrid />
+//
+// 【カスタム構成】
+//   <FeatureGrid features={myFeatures} columns={3} title="選ばれる3つの理由" />
+
+export interface Feature {
+  icon:        string;   // 絵文字 or SVG文字列
+  title:       string;
+  description: string;
+  badge?:      string;   // 任意のバッジテキスト（例: "No.1"）
+}
+
+export interface Props {
+  label?:    string;
+  title?:    string;
+  subtitle?: string;
+  features?: Feature[];
+  columns?:  2 | 3;      // カラム数（デフォルト: 3）
+  bgColor?:  string;
+}
+
+const {
+  label    = "FEATURES",
+  title    = "選ばれる理由",
+  subtitle = "他にはない、3つのポイント",
+  features = [
+    {
+      icon: "⚡",
+      title: "スピード対応",
+      description: "お問い合わせから最短即日でご対応。待たせない、スピーディーなサポートを実現しています。",
+    },
+    {
+      icon: "🔒",
+      title: "安心のサポート",
+      description: "専門スタッフが丁寧にサポート。はじめての方でも安心してご利用いただけます。",
+    },
+    {
+      icon: "💰",
+      title: "コストパフォーマンス",
+      description: "初期費用・違約金なし。必要な分だけ使えるシンプルな料金体系です。",
+    },
+  ],
+  columns  = 3,
+  bgColor  = "#f8f6f2",
+} = Astro.props;
+---
+
+<section class="feature-section" style={`background: ${bgColor};`}>
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">{label}</span>
+      <h2 class="section-title">{title}</h2>
+      {subtitle && <p class="section-subtitle">{subtitle}</p>}
+    </div>
+
+    <div class={`feature-grid cols-${columns}`}>
+      {features.map((f, i) => (
+        <div class="feature-card">
+          {f.badge && <span class="feature-badge">{f.badge}</span>}
+          <div class="feature-icon">{f.icon}</div>
+          <div class="feature-number">{String(i + 1).padStart(2, '0')}</div>
+          <h3 class="feature-title">{f.title}</h3>
+          <p class="feature-desc">{f.description}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .feature-section {
+    padding: 80px 0 96px;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Header ── */
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-label {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: .25em;
+    color: #e07b39; background: #fef3ea; border: 1px solid #f5c49a;
+    padding: 4px 16px; border-radius: 100px; margin-bottom: 14px;
+  }
+  .section-title    { font-size: clamp(24px, 4vw, 34px); font-weight: 700; color: #1a1a2e; margin: 0 0 12px; line-height: 1.35; }
+  .section-subtitle { font-size: 15px; color: #6b7280; margin: 0; }
+
+  /* ── Grid ── */
+  .feature-grid {
+    display: grid;
+    gap: 24px;
+  }
+  .feature-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .feature-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+  /* ── Card ── */
+  .feature-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid #f0ece6;
+    border-radius: 20px;
+    padding: 32px 24px 28px;
+    text-align: center;
+    box-shadow: 0 2px 16px rgba(0,0,0,.05);
+    transition: transform .2s ease, box-shadow .2s ease;
+    overflow: hidden;
+  }
+  .feature-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #e07b39, #f5a862);
+  }
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 36px rgba(0,0,0,.1);
+  }
+
+  .feature-badge {
+    position: absolute; top: 14px; right: 14px;
+    background: #e07b39; color: #fff;
+    font-size: 10px; font-weight: 800; letter-spacing: .05em;
+    padding: 3px 10px; border-radius: 100px;
+  }
+  .feature-icon   { font-size: 44px; line-height: 1; margin-bottom: 8px; }
+  .feature-number {
+    font-size: 11px; font-weight: 800; letter-spacing: .1em;
+    color: #e07b39; background: #fef3ea;
+    display: inline-block; padding: 2px 10px; border-radius: 4px;
+    margin-bottom: 14px;
+  }
+  .feature-title { font-size: 17px; font-weight: 700; color: #1a1a2e; margin: 0 0 12px; line-height: 1.4; }
+  .feature-desc  { font-size: 13px; color: #4b5563; line-height: 1.8; margin: 0; }
+
+  /* ── Mobile ── */
+  @media (max-width: 900px) {
+    .feature-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .feature-section { padding: 60px 0 72px; }
+    .feature-grid.cols-3,
+    .feature-grid.cols-2 { grid-template-columns: 1fr; }
+    .feature-card { padding: 28px 20px 24px; }
+  }
+</style>

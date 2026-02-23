@@ -1,0 +1,180 @@
+---
+// ComparisonTable.astro - Props対応版
+//
+// 【最小構成】
+//   <ComparisonTable />
+//
+// 【カスタム構成】
+//   <ComparisonTable rows={myRows} highlightLabel="当サービス" competitorLabels={["A社","B社"]} />
+
+export interface ComparisonRow {
+  label:     string;    // 比較項目
+  highlight: string;    // 自社の値（強調表示）
+  others:    string[];  // 競合の値
+}
+
+export interface Props {
+  label?:             string;
+  title?:             string;
+  subtitle?:          string;
+  highlightLabel?:    string;          // 自社カラムのヘッダー
+  competitorLabels?:  string[];        // 競合カラムのヘッダー
+  rows?:              ComparisonRow[];
+  summary?:           string[];        // テーブル下の補足テキスト
+  bgColor?:           string;
+}
+
+const {
+  label            = "COMPARE",
+  title            = "他社との比較",
+  subtitle         = "主要なポイントで比較しました",
+  highlightLabel   = "当サービス",
+  competitorLabels = ["A社", "B社"],
+  rows             = [
+    { label: "初期費用",   highlight: "0円",      others: ["要確認", "要確認"] },
+    { label: "対応時間",   highlight: "24時間",   others: ["〜23時", "〜22時"] },
+    { label: "返金保証",   highlight: "あり",      others: ["なし",   "なし"]   },
+    { label: "解約違約金", highlight: "なし",      others: ["あり",   "あり"]   },
+  ],
+  summary  = [],
+  bgColor  = "#f8f6f2",
+} = Astro.props;
+---
+
+<section class="comparison-section" style={`background: ${bgColor};`}>
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">{label}</span>
+      <h2 class="section-title">{title}</h2>
+      {subtitle && <p class="section-subtitle">{subtitle}</p>}
+    </div>
+
+    <div class="table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th class="th-item">比較項目</th>
+            <th class="th-highlight">{highlightLabel}</th>
+            {competitorLabels.map(l => (
+              <th class="th-other">{l}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map(row => (
+            <tr>
+              <td class="td-label">{row.label}</td>
+              <td class="td-highlight">{row.highlight}</td>
+              {row.others.map(v => (
+                <td class="td-other">{v}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    {summary.length > 0 && (
+      <ul class="summary-list">
+        {summary.map(text => (
+          <li class="summary-item">
+            <span class="summary-dot" aria-hidden="true" />
+            <span set:html={text} />
+          </li>
+        ))}
+      </ul>
+    )}
+
+  </div>
+</section>
+
+<style>
+  .comparison-section {
+    padding: 80px 0 96px;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Header ── */
+  .section-header { text-align: center; margin-bottom: 48px; }
+  .section-label {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: .25em;
+    color: #e07b39; background: #fef3ea; border: 1px solid #f5c49a;
+    padding: 4px 16px; border-radius: 100px; margin-bottom: 14px;
+  }
+  .section-title    { font-size: clamp(22px, 4vw, 32px); font-weight: 700; color: #1a1a2e; margin: 0 0 10px; }
+  .section-subtitle { font-size: 14px; color: #6b7280; margin: 0; }
+
+  /* ── Table ── */
+  .table-wrap { overflow-x: auto; border-radius: 16px; box-shadow: 0 2px 20px rgba(0,0,0,.07); }
+  .comp-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 14px; background: #fff;
+    min-width: 480px;
+  }
+
+  /* Head */
+  .comp-table thead tr {
+    border-bottom: 2px solid #1a1a2e;
+  }
+  .th-item {
+    padding: 14px 16px; text-align: left;
+    font-size: 12px; font-weight: 700; color: #6b7280;
+    width: 28%;
+  }
+  .th-highlight {
+    padding: 14px 16px; text-align: center;
+    font-size: 13px; font-weight: 800; color: #e07b39;
+    background: #fef3ea;
+  }
+  .th-other {
+    padding: 14px 16px; text-align: center;
+    font-size: 12px; font-weight: 700; color: #9ca3af;
+  }
+
+  /* Body */
+  .comp-table tbody tr { border-bottom: 1px solid #f0ece6; }
+  .comp-table tbody tr:last-child { border-bottom: none; }
+  .comp-table tbody tr:hover { background: #fdfaf7; }
+
+  .td-label {
+    padding: 14px 16px;
+    font-size: 13px; color: #374151; font-weight: 500;
+  }
+  .td-highlight {
+    padding: 14px 16px; text-align: center;
+    font-size: 14px; font-weight: 800; color: #e07b39;
+    background: #fffbf7;
+  }
+  .td-other {
+    padding: 14px 16px; text-align: center;
+    font-size: 13px; color: #9ca3af;
+  }
+
+  /* ── Summary ── */
+  .summary-list {
+    margin: 28px 0 0; padding: 0;
+    list-style: none;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .summary-item {
+    display: flex; align-items: baseline; gap: 10px;
+    font-size: 14px; color: #374151; line-height: 1.7;
+  }
+  .summary-dot {
+    flex-shrink: 0;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #e07b39; margin-top: 2px;
+    display: inline-block;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 640px) {
+    .comparison-section { padding: 60px 0 72px; }
+    .th-item, .td-label { font-size: 12px; padding: 12px 10px; }
+    .th-highlight, .td-highlight,
+    .th-other, .td-other { font-size: 12px; padding: 12px 8px; }
+  }
+</style>

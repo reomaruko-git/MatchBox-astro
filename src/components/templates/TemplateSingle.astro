@@ -2,6 +2,12 @@
 // src/components/templates/TemplateSingle.astro
 import AffiliateBanner from './AffiliateBanner.astro';
 import ArticleCta from './ArticleCta.astro';
+import ComparisonTable from '../sections/ComparisonTable.astro';
+import Faq from '../sections/Faq.astro';
+import FeatureGrid from '../sections/FeatureGrid.astro';
+import HowToUse from '../sections/HowToUse.astro';
+import PriceTable from '../sections/PriceTable.astro';
+import Testimonials from '../sections/Testimonials.astro';
 import StickyFooter from './StickyFooter.astro';
 import BaseLayout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
@@ -42,7 +48,13 @@ const keywords = [
   ...(data.keywords || [])
 ];
 
-const ctaData = data.cta;
+const ctaData         = data.cta;
+const featureGridData = data.featureGrid;
+const howToUseData    = data.howToUse;
+const comparisonData  = data.comparisonTable;
+const testimonialsData = data.testimonials;
+const priceTableData  = data.priceTable;
+const faqData         = data.faq;
 const heroCta = data.heroCta || {};
 const mvButtonLabel = heroCta.label || data.mvButtonLabel || '公式サイトで詳細を見る';
 const mvMicroCopy = heroCta.microCopy || data.mvMicroCopy || '※登録は無料・1分で完了します';
@@ -109,7 +121,52 @@ const cvButtonColor = '#00A968';
              <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed prose-p:tracking-normal">
                 <Content />
              </div>
-             
+
+             {featureGridData && (
+               <div class="-mx-8 md:-mx-14 mt-10">
+                 <FeatureGrid {...featureGridData} />
+               </div>
+             )}
+
+             {howToUseData && (
+               <div class="-mx-8 md:-mx-14 mt-2">
+                 <HowToUse
+                   {...howToUseData}
+                   ctaHref={howToUseData.ctaHref || affiliateLink}
+                 />
+               </div>
+             )}
+
+             {comparisonData && (
+               <div class="-mx-8 md:-mx-14 mt-2">
+                 <ComparisonTable {...comparisonData} />
+               </div>
+             )}
+
+             {priceTableData && (
+               <div class="-mx-8 md:-mx-14 mt-2">
+                 <PriceTable
+                   {...priceTableData}
+                   ctaHref={priceTableData.ctaHref || affiliateLink}
+                 />
+               </div>
+             )}
+
+             {testimonialsData && (
+               <div class="-mx-8 md:-mx-14 mt-2">
+                 <Testimonials
+                   {...testimonialsData}
+                   testimonials={testimonialsData.items}
+                 />
+               </div>
+             )}
+
+             {faqData && (
+               <div class="-mx-8 md:-mx-14 mt-2">
+                 <Faq {...faqData} />
+               </div>
+             )}
+
              {ctaData && (
                <ArticleCta
                  href={affiliateLink}

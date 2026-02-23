@@ -1,0 +1,187 @@
+---
+// HowToUse.astro - Props対応版
+//
+// 【最小構成】デフォルトのまま使う
+//   <HowToUse />
+//
+// 【カスタム構成】中身をページごとに差し替える
+//   <HowToUse steps={mySteps} ctaText="今すぐ確認する" ctaHref="#cta" />
+
+export interface Step {
+  number: string;
+  icon: string;
+  title: string;
+  description: string;
+  note?: string;       // ※〜 の補足テキスト（省略可）
+}
+
+export interface Props {
+  label?:    string;   // セクションラベル（デフォルト: "STEP"）
+  title?:    string;   // セクションタイトル
+  subtitle?: string;   // サブタイトル（省略可）
+  steps?:    Step[];   // ステップ配列（省略時はデフォルトのダミー）
+  ctaText?:  string;   // CTAボタンのテキスト
+  ctaHref?:  string;   // CTAボタンのリンク先
+  ctaNote?:  string;   // CTAボタン下の小さいテキスト（省略可）
+  bgColor?:  string;   // セクション背景色
+}
+
+const {
+  label   = "STEP",
+  title   = "ご利用の流れ",
+  subtitle = "スマホからでも、たった4ステップで完結します",
+  steps   = [
+    {
+      number: "01",
+      icon: "📋",
+      title: "無料で診断する",
+      description: "フォームに答えるだけで、あなたにぴったりのプランが分かります。所要時間はたったの2分。",
+      note: "※スマホからでも簡単に入力できます",
+    },
+    {
+      number: "02",
+      icon: "🔍",
+      title: "結果を確認する",
+      description: "診断結果をもとに、最適なプランと料金の目安をご確認いただけます。",
+      note: "※比較・検討もその場でできます",
+    },
+    {
+      number: "03",
+      icon: "📞",
+      title: "専門スタッフに相談",
+      description: "気になる点はスタッフが丁寧にご説明します。しつこい営業は一切ありません。",
+      note: "※電話・メール・LINEで対応",
+    },
+    {
+      number: "04",
+      icon: "✅",
+      title: "お申し込み完了",
+      description: "ご納得いただけたらお申し込みへ。手続きはオンラインで完結するので手間いらずです。",
+      note: "※最短即日でご利用スタートできます",
+    },
+  ],
+  ctaText  = "まずは無料で診断する",
+  ctaHref  = "#form",
+  ctaNote  = "登録不要・完全無料でご利用いただけます",
+  bgColor  = "#f8f6f2",
+} = Astro.props;
+---
+
+<section class="how-to-use-section" style={`background: ${bgColor};`}>
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">{label}</span>
+      <h2 class="section-title">{title}</h2>
+      {subtitle && <p class="section-subtitle">{subtitle}</p>}
+    </div>
+
+    <div class="steps-wrapper">
+      {steps.map((step, index) => (
+        <div class="step-item">
+          <div class="step-inner">
+            <div class="step-number-wrap">
+              <span class="step-number">{step.number}</span>
+            </div>
+            <div class="step-icon">{step.icon}</div>
+            <h3 class="step-title">{step.title}</h3>
+            <p class="step-description">{step.description}</p>
+            {step.note && <p class="step-note">{step.note}</p>}
+          </div>
+          {index < steps.length - 1 && (
+            <div class="step-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div class="cta-wrap">
+      <a href={ctaHref} class="cta-button">
+        {ctaText}<span class="cta-arrow">→</span>
+      </a>
+      {ctaNote && <p class="cta-note">{ctaNote}</p>}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .how-to-use-section {
+    padding: 80px 0 96px;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Header ── */
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-label {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: .25em;
+    color: #e07b39; background: #fef3ea; border: 1px solid #f5c49a;
+    padding: 4px 16px; border-radius: 100px; margin-bottom: 14px;
+  }
+  .section-title {
+    font-size: clamp(24px, 4vw, 34px); font-weight: 700;
+    color: #1a1a2e; line-height: 1.35; margin: 0 0 12px;
+  }
+  .section-subtitle { font-size: 15px; color: #6b7280; margin: 0; }
+
+  /* ── Steps ── */
+  .steps-wrapper { display: flex; align-items: flex-start; margin-bottom: 56px; }
+  .step-item     { display: flex; align-items: center; flex: 1; }
+  .step-inner {
+    flex: 1;
+    background: #fff; border-radius: 16px; padding: 28px 22px;
+    text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,.06);
+    border: 1px solid #f0ece6; position: relative; overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .step-inner::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #e07b39, #f5a862);
+  }
+  .step-inner:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+  .step-number-wrap { margin-bottom: 12px; }
+  .step-number {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .1em;
+    color: #e07b39; background: #fef3ea; padding: 3px 10px; border-radius: 4px;
+  }
+  .step-icon        { font-size: 36px; margin-bottom: 14px; line-height: 1; }
+  .step-title       { font-size: 15px; font-weight: 700; color: #1a1a2e; margin: 0 0 10px; line-height: 1.4; }
+  .step-description { font-size: 13px; color: #4b5563; line-height: 1.7; margin: 0 0 10px; }
+  .step-note        { font-size: 11px; color: #9ca3af; margin: 0; }
+  .step-arrow {
+    width: 32px; flex-shrink: 0; color: #d1c7bb;
+    display: flex; align-items: center; justify-content: center; padding-bottom: 20px;
+  }
+  .step-arrow svg { width: 20px; height: 20px; }
+
+  /* ── CTA ── */
+  .cta-wrap { text-align: center; }
+  .cta-button {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, #e07b39, #f5a040);
+    color: #fff; font-size: 17px; font-weight: 700;
+    text-decoration: none; padding: 18px 48px; border-radius: 100px;
+    box-shadow: 0 4px 24px rgba(224,123,57,.4);
+    transition: transform .2s ease, box-shadow .2s ease; letter-spacing: .02em;
+  }
+  .cta-button:hover        { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(224,123,57,.5); }
+  .cta-arrow               { font-size: 20px; transition: transform .2s ease; }
+  .cta-button:hover .cta-arrow { transform: translateX(4px); }
+  .cta-note                { margin: 14px 0 0; font-size: 12px; color: #9ca3af; }
+
+  /* ── Mobile ── */
+  @media (max-width: 768px) {
+    .how-to-use-section { padding: 60px 0 72px; }
+    .steps-wrapper      { flex-direction: column; }
+    .step-item          { flex-direction: column; align-items: center; width: 100%; }
+    .step-inner         { width: 100%; padding: 24px 20px; }
+    .step-arrow         { transform: rotate(90deg); width: auto; padding: 6px 0; }
+    .cta-button         { font-size: 15px; padding: 16px 32px; width: 100%; max-width: 320px; justify-content: center; }
+  }
+</style>

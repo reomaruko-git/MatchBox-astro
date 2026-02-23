@@ -1,0 +1,242 @@
+---
+// Testimonials.astro - Props対応版
+//
+// 【最小構成】デフォルトのまま使う
+//   <Testimonials />
+//
+// 【カスタム構成】中身をページごとに差し替える
+//   <Testimonials testimonials={myVoices} title="お客様の声" />
+
+export interface Testimonial {
+  id:          number;
+  prefecture:  string;   // 例: "東京都 T様"
+  avatar:      string;   // 絵文字 or 画像URL（文字列）
+  title:       string;   // 太字の一言タイトル
+  body:        string;   // 本文
+}
+
+export interface Props {
+  label?:        string;          // セクションラベル（デフォルト: "VOICE"）
+  title?:        string;          // セクションタイトル
+  subtitle?:     string;          // サブタイトル（省略可）
+  testimonials?: Testimonial[];   // 声データ配列（省略時はデフォルトのダミー）
+  autoplay?:     boolean;         // 自動再生のON/OFF（デフォルト: true）
+  interval?:     number;          // 自動再生の間隔ms（デフォルト: 5000）
+  bgColor?:      string;          // セクション背景色
+}
+
+const {
+  label    = "VOICE",
+  title    = "ご利用者様の声",
+  subtitle = "実際に利用された方々の感想をご紹介します",
+  testimonials = [
+    {
+      id: 1,
+      prefecture: "東京都 T様",
+      avatar: "👩",
+      title: "思っていたより費用が抑えられて助かりました。",
+      body: "他社と比較していたのですが、こちらのサービスが一番わかりやすく説明してくれました。スタッフの方も丁寧で、不安なく申し込めました。",
+    },
+    {
+      id: 2,
+      prefecture: "神奈川県 S様",
+      avatar: "👨",
+      title: "スマホだけで手続きが完結したのが便利でした。",
+      body: "仕事が忙しくて店舗に行く時間がなかったのですが、全部オンラインで完結できたので助かりました。何度か質問しましたが、毎回すぐに返信いただけました。",
+    },
+    {
+      id: 3,
+      prefecture: "埼玉県 K様",
+      avatar: "👩",
+      title: "比較サイトで迷っていたが、ここで決めてよかった。",
+      body: "正直最初は不安でしたが、無料診断でざっくりとした費用感が分かったので安心して進められました。同じような悩みを持つ友人にもすすめました。",
+    },
+    {
+      id: 4,
+      prefecture: "千葉県 M様",
+      avatar: "👴",
+      title: "担当者がとても親身になって対応してくれました。",
+      body: "高齢の親の代わりに私が問い合わせしたのですが、専門用語を使わず分かりやすく説明してくれました。こういうサービスを探していました。",
+    },
+    {
+      id: 5,
+      prefecture: "大阪府 Y様",
+      avatar: "👩",
+      title: "申し込み後もフォローがあって安心できました。",
+      body: "申し込んで終わりではなく、その後もメールで進捗を教えてくれたので放置されている感じがなく良かったです。",
+    },
+  ],
+  autoplay = true,
+  interval = 5000,
+  bgColor  = "#fff",
+} = Astro.props;
+
+const total = testimonials.length;
+---
+
+<section class="testimonials-section" style={{ background: bgColor }}>
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">{label}</span>
+      <h2 class="section-title">{title}</h2>
+      {subtitle && <p class="section-subtitle">{subtitle}</p>}
+    </div>
+
+    <div class="slider-outer">
+      <div class="slider-track" id="testimonialTrack">
+        {testimonials.map((t) => (
+          <div class="testimonial-card">
+            <div class="card-top">
+              <div class="avatar">{t.avatar}</div>
+              <div class="meta">
+                <span class="prefecture">{t.prefecture}</span>
+                <div class="stars" aria-label="星5つ">★★★★★</div>
+              </div>
+            </div>
+            <h3 class="card-title">「{t.title}」</h3>
+            <p class="card-body">{t.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="slider-dots" id="sliderDots">
+      {testimonials.map((_, i) => (
+        <button class={`dot ${i === 0 ? "active" : ""}`} data-index={i} aria-label={`${i + 1}件目`} />
+      ))}
+    </div>
+
+    <div class="slider-nav">
+      <button class="nav-btn" id="prevBtn" aria-label="前へ">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <span class="nav-counter">
+        <span id="currentIndex">1</span> / {total}
+      </span>
+      <button class="nav-btn" id="nextBtn" aria-label="次へ">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<script define:vars={{ total, autoplay, interval }}>
+  const track     = document.getElementById("testimonialTrack");
+  const dots      = document.querySelectorAll(".dot");
+  const prevBtn   = document.getElementById("prevBtn");
+  const nextBtn   = document.getElementById("nextBtn");
+  const counterEl = document.getElementById("currentIndex");
+  let current = 0;
+
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle("active", i === current));
+    if (counterEl) counterEl.textContent = String(current + 1);
+  }
+
+  prevBtn?.addEventListener("click", () => goTo(current - 1));
+  nextBtn?.addEventListener("click", () => goTo(current + 1));
+  dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
+
+  // Autoplay
+  let timer;
+  if (autoplay) {
+    timer = setInterval(() => goTo(current + 1), interval);
+    track.addEventListener("mouseenter", () => clearInterval(timer));
+    track.addEventListener("mouseleave", () => {
+      timer = setInterval(() => goTo(current + 1), interval);
+    });
+  }
+
+  // Touch swipe
+  let startX = 0;
+  track.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; });
+  track.addEventListener("touchend",   (e) => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+  });
+</script>
+
+<style>
+  .testimonials-section {
+    padding: 80px 0 96px;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Header ── */
+  .section-header { text-align: center; margin-bottom: 48px; }
+  .section-label {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: .25em;
+    color: #e07b39; background: #fef3ea; border: 1px solid #f5c49a;
+    padding: 4px 16px; border-radius: 100px; margin-bottom: 14px;
+  }
+  .section-title   { font-size: clamp(22px, 4vw, 32px); font-weight: 700; color: #1a1a2e; margin: 0 0 10px; line-height: 1.35; }
+  .section-subtitle { font-size: 14px; color: #6b7280; margin: 0; }
+
+  /* ── Slider ── */
+  .slider-outer  { overflow: hidden; border-radius: 20px; margin-bottom: 24px; }
+  .slider-track  { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); }
+
+  /* ── Card ── */
+  .testimonial-card {
+    min-width: 100%; background: #fdf9f5;
+    border: 1px solid #f0ebe3; border-radius: 20px;
+    padding: 36px 36px 32px; box-sizing: border-box; position: relative;
+  }
+  .testimonial-card::before {
+    content: '"'; position: absolute; top: 20px; right: 28px;
+    font-size: 80px; line-height: 1; color: #f5d5be;
+    font-family: Georgia, serif; pointer-events: none;
+  }
+  .card-top    { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+  .avatar {
+    font-size: 40px; width: 56px; height: 56px; background: #fff;
+    border: 2px solid #f0ebe3; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  }
+  .meta        { display: flex; flex-direction: column; gap: 4px; }
+  .prefecture  { font-size: 13px; font-weight: 700; color: #374151; }
+  .stars       { font-size: 14px; color: #f5a040; letter-spacing: 2px; }
+  .card-title  { font-size: 17px; font-weight: 700; color: #1a1a2e; line-height: 1.5; margin: 0 0 14px; }
+  .card-body   { font-size: 14px; color: #4b5563; line-height: 1.85; margin: 0; }
+
+  /* ── Dots ── */
+  .slider-dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%; background: #e5e0d8;
+    border: none; cursor: pointer; padding: 0;
+    transition: all .25s ease;
+  }
+  .dot.active  { background: #e07b39; width: 24px; border-radius: 4px; }
+
+  /* ── Nav ── */
+  .slider-nav  { display: flex; align-items: center; justify-content: center; gap: 20px; }
+  .nav-btn {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1.5px solid #e5e0d8; background: #fff; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: #6b7280; transition: all .2s ease;
+  }
+  .nav-btn:hover { border-color: #e07b39; color: #e07b39; background: #fef3ea; }
+  .nav-btn svg   { width: 18px; height: 18px; }
+  .nav-counter   { font-size: 13px; color: #9ca3af; min-width: 40px; text-align: center; }
+
+  /* ── Mobile ── */
+  @media (max-width: 640px) {
+    .testimonials-section  { padding: 60px 0 72px; }
+    .testimonial-card      { padding: 28px 22px 24px; }
+    .testimonial-card::before { font-size: 56px; top: 14px; right: 18px; }
+    .card-title            { font-size: 15px; }
+    .card-body             { font-size: 13px; }
+  }
+</style>

@@ -1,0 +1,232 @@
+---
+// PriceTable.astro - Props対応版
+//
+// 【最小構成】
+//   <PriceTable />
+//
+// 【カスタム構成】
+//   <PriceTable plans={myPlans} ctaHref="/apply" title="料金プラン" />
+
+export interface Plan {
+  name:         string;
+  description?: string;
+  price:        string;   // 例: "1,349"
+  unit?:        string;   // 例: "円/月（税込）"
+  originalPrice?: string; // 例: "3,850" （定価）
+  features:     string[]; // 含まれる内容リスト
+  recommended?: boolean;  // おすすめフラグ
+  badge?:       string;   // バッジテキスト（例: "⭐ 人気No.1"）
+  ctaText?:     string;   // プラン個別のCTAテキスト
+}
+
+export interface Props {
+  label?:   string;
+  title?:   string;
+  subtitle?: string;
+  plans?:   Plan[];
+  ctaHref?: string;   // 共通CTA リンク先
+  ctaNote?: string;   // CTA下の補足
+  bgColor?: string;
+}
+
+const {
+  label    = "PRICE",
+  title    = "料金プラン",
+  subtitle = "シンプルな料金体系。隠れた費用は一切ありません",
+  plans    = [
+    {
+      name: "ライトプラン",
+      price: "980",
+      unit: "円/月（税込）",
+      features: ["基本機能すべて", "メールサポート", "月1回のレポート"],
+      ctaText: "このプランで始める",
+    },
+    {
+      name: "スタンダードプラン",
+      price: "1,980",
+      unit: "円/月（税込）",
+      features: ["ライトプランの全機能", "チャットサポート", "週次レポート", "優先対応"],
+      recommended: true,
+      badge: "⭐ 人気No.1",
+      ctaText: "このプランで始める",
+    },
+    {
+      name: "プロプラン",
+      price: "3,980",
+      unit: "円/月（税込）",
+      features: ["スタンダードの全機能", "専任担当者", "無制限サポート", "カスタム設定"],
+      ctaText: "このプランで始める",
+    },
+  ],
+  ctaHref  = "#apply",
+  ctaNote,
+  bgColor  = "#f8f6f2",
+} = Astro.props;
+---
+
+<section class="price-section" style={`background: ${bgColor};`}>
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">{label}</span>
+      <h2 class="section-title">{title}</h2>
+      {subtitle && <p class="section-subtitle">{subtitle}</p>}
+    </div>
+
+    <div class={`plans-grid plans-${plans.length}`}>
+      {plans.map(plan => (
+        <div class:list={["plan-card", { "plan-recommended": plan.recommended }]}>
+          {plan.badge && <div class="plan-badge">{plan.badge}</div>}
+          {plan.recommended && <div class="plan-glow" aria-hidden="true" />}
+
+          <div class="plan-header">
+            <p class="plan-name">{plan.name}</p>
+            {plan.description && <p class="plan-desc">{plan.description}</p>}
+          </div>
+
+          <div class="plan-price-wrap">
+            {plan.originalPrice && (
+              <p class="plan-original">
+                通常 <s>{plan.originalPrice}</s>{plan.unit}
+              </p>
+            )}
+            <div class="plan-price">
+              <span class="price-num">{plan.price}</span>
+              <span class="price-unit">{plan.unit ?? "円/月"}</span>
+            </div>
+          </div>
+
+          <ul class="plan-features">
+            {plan.features.map(f => (
+              <li class="plan-feature">
+                <span class="feature-check" aria-hidden="true">✓</span>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a href={ctaHref} class:list={["plan-cta", { "plan-cta-recommended": plan.recommended }]}>
+            {plan.ctaText ?? "このプランで始める"}
+            <span class="cta-arrow">→</span>
+          </a>
+        </div>
+      ))}
+    </div>
+
+    {ctaNote && <p class="price-note">{ctaNote}</p>}
+
+  </div>
+</section>
+
+<style>
+  .price-section {
+    padding: 80px 0 96px;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Header ── */
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-label {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: .25em;
+    color: #e07b39; background: #fef3ea; border: 1px solid #f5c49a;
+    padding: 4px 16px; border-radius: 100px; margin-bottom: 14px;
+  }
+  .section-title    { font-size: clamp(24px, 4vw, 34px); font-weight: 700; color: #1a1a2e; margin: 0 0 12px; }
+  .section-subtitle { font-size: 15px; color: #6b7280; margin: 0; }
+
+  /* ── Grid ── */
+  .plans-grid {
+    display: grid;
+    gap: 20px;
+    align-items: start;
+  }
+  .plans-3 { grid-template-columns: repeat(3, 1fr); }
+  .plans-2 { grid-template-columns: repeat(2, 1fr); max-width: 720px; margin: 0 auto; }
+  .plans-1 { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+
+  /* ── Card ── */
+  .plan-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid #ede8e0;
+    border-radius: 20px;
+    padding: 28px 24px 24px;
+    display: flex; flex-direction: column; gap: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,.05);
+    transition: transform .2s ease;
+  }
+  .plan-card:hover { transform: translateY(-4px); }
+
+  .plan-recommended {
+    border: 2px solid #e07b39;
+    box-shadow: 0 8px 32px rgba(224,123,57,.18);
+  }
+  .plan-glow {
+    position: absolute; inset: -1px; border-radius: 20px; z-index: -1;
+    background: linear-gradient(135deg, #e07b39, #f5a040);
+    opacity: .08;
+  }
+
+  .plan-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(135deg, #e07b39, #f5a040);
+    color: #fff; font-size: 12px; font-weight: 800;
+    padding: 4px 18px; border-radius: 100px;
+    white-space: nowrap; box-shadow: 0 2px 12px rgba(224,123,57,.4);
+  }
+
+  /* ── Plan name ── */
+  .plan-header { text-align: center; }
+  .plan-name {
+    font-size: 16px; font-weight: 800; color: #1a1a2e;
+    margin: 0 0 6px;
+  }
+  .plan-desc { font-size: 12px; color: #9ca3af; margin: 0; }
+
+  /* ── Price ── */
+  .plan-price-wrap { text-align: center; }
+  .plan-original { font-size: 12px; color: #9ca3af; margin: 0 0 4px; }
+  .plan-original s { text-decoration: line-through; }
+  .plan-price { display: flex; align-items: baseline; justify-content: center; gap: 4px; }
+  .price-num  { font-size: 40px; font-weight: 900; color: #e07b39; line-height: 1; }
+  .price-unit { font-size: 13px; color: #6b7280; }
+
+  /* ── Features ── */
+  .plan-features { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .plan-feature  { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #374151; line-height: 1.5; }
+  .feature-check { flex-shrink: 0; color: #e07b39; font-weight: 800; margin-top: 1px; }
+
+  /* ── CTA ── */
+  .plan-cta {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 14px 20px; border-radius: 100px;
+    font-size: 14px; font-weight: 700; text-decoration: none;
+    border: 2px solid #e07b39; color: #e07b39;
+    transition: all .2s ease; text-align: center;
+  }
+  .plan-cta:hover { background: #fef3ea; }
+  .plan-cta-recommended {
+    background: linear-gradient(135deg, #e07b39, #f5a040);
+    color: #fff; border-color: transparent;
+    box-shadow: 0 4px 20px rgba(224,123,57,.4);
+  }
+  .plan-cta-recommended:hover { opacity: .92; background: linear-gradient(135deg, #e07b39, #f5a040); }
+  .cta-arrow { font-size: 16px; transition: transform .2s; }
+  .plan-cta:hover .cta-arrow { transform: translateX(3px); }
+
+  /* ── Note ── */
+  .price-note { text-align: center; margin: 28px 0 0; font-size: 12px; color: #9ca3af; }
+
+  /* ── Mobile ── */
+  @media (max-width: 900px) {
+    .plans-3 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .price-section { padding: 60px 0 72px; }
+    .plans-3,
+    .plans-2 { grid-template-columns: 1fr; }
+    .price-num { font-size: 36px; }
+  }
+</style>

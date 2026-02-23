@@ -33,6 +33,9 @@ vendor/
 *.psd
 .ai
 
+# lp-automation（ツール - git管理しない）
+lp-automation/
+
 # --- その他 ---
 *.log
 backup/
