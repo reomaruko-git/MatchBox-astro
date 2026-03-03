@@ -150,4 +150,14 @@ const lps = defineCollection({
   }),
 });
 
-export const collections = { lps };
+// .astro ページ用の軽量メタデータコレクション
+const lpPages = defineCollection({
+  type: 'data',
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    mv: image().optional(),
+  }),
+});
+
+export const collections = { lps, 'lp-pages': lpPages };

@@ -17,5 +17,8 @@
     "@tailwindcss/typography": "^0.5.19",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-arm64-gnu": "*"
   }
 }

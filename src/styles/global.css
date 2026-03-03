@@ -4,18 +4,21 @@
 @layer base {
   :root {
     /* ▼ カスタムカラー（デフォルト値） */
-    --color-primary: #0ea5e9;
-    --color-primary-hover: #0284c7;
-    --color-secondary: #fc6387;
-    --color-accent: #f97316;
-    
-    --color-text: #334155;
-    --color-sub-text: #64748b;
-    --color-bg-warm: #f0f9ff;
-    
-    /* ▼ 影の設定 */
-    --shadow-soft: 0 10px 40px -10px rgba(14, 165, 233, 0.08);
-    --shadow-card: 0 4px 6px -1px rgba(14, 165, 233, 0.05);
+    --color-primary: #1A2744;
+    --color-primary-hover: #253460;
+    --color-secondary: #ffffff;
+    --color-accent: #00B4A0;
+    --color-orange: #F97316;
+
+    --color-text: #333333;
+    --color-sub-text: #666666;
+    --color-bg-gray: #F4F5F7;
+    --color-divider: #E8E9EC;
+
+    /* ▼ 影・角丸 */
+    --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.08);
+    --shadow-card: 0 2px 12px rgba(0,0,0,.08);
+    --radius: 12px;
   }
 
   body {

@@ -1,0 +1,593 @@
+---
+/**
+ * le-age0301.astro
+ * レバクリ AGA治療 LP（専用ページ）
+ * LayoutLp.astro + lp-template.css を使用
+ */
+import LayoutLp from '../layouts/LayoutLp.astro';
+import mvImage from '../assets/images/lp/le-age0301/mv.webp';
+
+const affiliateUrl = "/link/le-age0301/";
+---
+
+<LayoutLp
+  title="深夜0時、スマホで始めるAGA治療。月1,349円〜。初診料0円。｜レバクリ"
+  description="誰にもバレずに、今夜から。翌日お届け。スマホで予約から処方まで完結。初診料・再診料0円、全額返金保証あり。レバクリのオンラインAGA治療。"
+  affiliateUrl={affiliateUrl}
+  canonical="https://matchbox-media.com/le-age0301/"
+  ogImage="/assets/images/lp/le-age0301/ogp.png"
+>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero">
+  <span class="pr-badge">PR</span>
+  <img class="hero-photo" src={mvImage.src} alt="AGA治療のイメージ" />
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <span class="hero-eyebrow">スマホで完結・AGA治療</span>
+    <h1 class="hero-title">
+      深夜0時、スマホで始める<br />AGA治療。<br />
+      <span class="accent">月1,349円〜。初診料0円。</span>
+    </h1>
+    <p class="hero-sub">誰にもバレずに、今夜から。翌日お届け。スマホで予約から処方まで完結。</p>
+    <div class="hero-badges">
+      <span class="hero-badge">
+        <svg class="badge-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 2H5a1 1 0 00-1 1v4l6 6 5-5-6-6z"/>
+          <circle cx="6.5" cy="5.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        初診料・再診料 0円
+      </span>
+      <span class="hero-badge">
+        <svg class="badge-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 2L3 4.5V8c0 2.8 2 4.8 5 5.5 3-.7 5-2.7 5-5.5V4.5L8 2z"/>
+          <path d="M5.5 8l2 2 3-3"/>
+        </svg>
+        全額返金保証あり
+      </span>
+      <span class="hero-badge">
+        <svg class="badge-icon" viewBox="0 0 16 16" fill="currentColor" stroke="none">
+          <path d="M9.8 1.5 5 9h3.5L6.2 14.5 13 7H9.5l.3-5.5z"/>
+        </svg>
+        最短即日発送・翌日届く
+      </span>
+      <span class="hero-badge">
+        <svg class="badge-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="7" width="10" height="7" rx="1.5"/>
+          <path d="M5 7V5a3 3 0 016 0v2"/>
+        </svg>
+        2年目以降も同価格
+      </span>
+    </div>
+    <div class="hero-cta-wrap">
+      <a href={affiliateUrl} class="btn-primary">
+        今すぐ無料で診察を予約する
+        <i class="arrow">›</i>
+      </a>
+      <span class="hero-microcopy">※24時間予約OK／診察は約15分／スマホで完結</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     感情訴求
+============================================================ -->
+<section class="lp-section bg-white">
+  <div class="lp-inner">
+    <h2 class="hdg-h2-border">最近、鏡を見るのが怖くなっていませんか？</h2>
+    <div class="illust-split">
+      <div class="illust-text">
+        <div class="lp-prose">
+          <p>風呂上がり、濡れた髪をかき上げたとき。指の間に絡まる抜け毛を、つい数えてしまう。</p>
+          <p>蛍光灯の下で、<span class="marker">頭頂部の地肌が透けて見えた</span>あの瞬間。胸がざわつくような、あの嫌な感覚。</p>
+          <p>集合写真を見返して、<span class="marker-teal">自分の頭だけが光を反射している</span>ことに気づく。</p>
+        </div>
+      </div>
+      <div class="illust-fig">
+        <!-- SVG①：悩む男性 -->
+        <svg viewBox="0 0 240 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="105" cy="115" r="90" fill="#EEF3FA"/>
+          <path d="M72 148 L72 200 L138 200 L138 148 Q128 133 110 129 L105 133 L100 129 Q82 133 72 148Z" fill="#1A2744"/>
+          <rect x="98" y="118" width="14" height="18" rx="3" fill="#F5C9A0"/>
+          <ellipse cx="105" cy="97" rx="25" ry="27" fill="#F5C9A0"/>
+          <path d="M84 85 Q94 73 105 71 Q116 69 126 85" stroke="#7A5C1E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <line x1="91" y1="82" x2="89" y2="74" stroke="#7A5C1E" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="99" y1="77" x2="98" y2="69" stroke="#7A5C1E" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="111" y1="76" x2="112" y2="68" stroke="#7A5C1E" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="120" y1="80" x2="122" y2="72" stroke="#7A5C1E" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M92 89 L99 87" stroke="#7A5C1E" stroke-width="2" stroke-linecap="round"/>
+          <path d="M111 87 L118 89" stroke="#7A5C1E" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="96" cy="95" r="3.5" fill="#2D1B0E"/>
+          <circle cx="114" cy="95" r="3.5" fill="#2D1B0E"/>
+          <path d="M98 108 Q105 104 112 108" stroke="#7A5C1E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M76 153 Q60 137 62 118" stroke="#1A2744" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <circle cx="62" cy="113" r="9" fill="#F5C9A0"/>
+          <path d="M134 153 Q148 165 148 180" stroke="#1A2744" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <circle cx="148" cy="184" r="9" fill="#F5C9A0"/>
+          <circle cx="150" cy="88" r="3" fill="#C8D8F0"/>
+          <circle cx="162" cy="76" r="5" fill="#C8D8F0"/>
+          <circle cx="178" cy="60" r="16" fill="white" stroke="#D0DFF0" stroke-width="1.5"/>
+          <circle cx="193" cy="60" r="13" fill="white" stroke="#D0DFF0" stroke-width="1.5"/>
+          <circle cx="185" cy="48" r="13" fill="white" stroke="#D0DFF0" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <p style="font-size:14px;font-weight:700;color:var(--text-sub);margin-top:32px;margin-bottom:14px;">こんな経験はありませんか？</p>
+    <div class="pain-cards">
+      <div class="pain-card">
+        <div class="pain-num">1</div>
+        <div class="pain-text">「最近、ちょっと薄くなった？」の一言が一日中頭から離れない</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-num">2</div>
+        <div class="pain-text">育毛シャンプーやサプリを試したが、正直何も変わらなかった</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-num">3</div>
+        <div class="pain-text">クリニックに行けばいいのはわかってる。でも待合室で人に会いたくない</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-num">4</div>
+        <div class="pain-text">受付で「薄毛の治療で…」と言うのが、どうしても恥ずかしい</div>
+      </div>
+    </div>
+
+    <div class="lp-prose" style="margin-top:24px;">
+      <p>その気持ち、おかしくありません。<strong>多くの人が、まったく同じところで立ち止まっています。</strong></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     なぜ先延ばしが危険か
+============================================================ -->
+<section class="lp-section bg-gray">
+  <div class="lp-inner">
+    <h2 class="hdg-h2-border">「いつかやろう」が一番危険な理由</h2>
+    <div class="lp-prose">
+      <p>あなたと同じ悩みを抱えている20〜40代の男性は、想像以上に多くいます。そして、その多くが<strong>「まだ大丈夫だろう」と放置している</strong>のが現実です。</p>
+    </div>
+
+    <div class="callout">
+      <div class="callout-icon">i</div>
+      <div>
+        <div class="callout-title">AGAは「進行性」の脱毛症です</div>
+        <div class="callout-body">放置しても自然に止まることはなく、時間が経つほど毛根は弱り、減っていきます。一度失われた毛根は、自然には戻りません。</div>
+      </div>
+    </div>
+
+    <!-- SVG②：AGA進行3段階 -->
+    <div class="illust-center">
+      <svg viewBox="0 0 300 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="82" r="30" fill="#F5C9A0"/>
+        <path d="M22 74 Q30 54 50 50 Q70 46 78 74" fill="#7A5C1E"/>
+        <path d="M26 72 Q32 60 40 58" stroke="#5A3E10" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M46 52 Q52 49 58 52" stroke="#5A3E10" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <circle cx="42" cy="84" r="2.5" fill="#2D1B0E"/>
+        <circle cx="58" cy="84" r="2.5" fill="#2D1B0E"/>
+        <path d="M43 94 Q50 99 57 94" stroke="#2D1B0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <rect x="26" y="119" width="48" height="20" rx="10" fill="#00B4A0"/>
+        <text x="50" y="133" font-size="11" fill="white" text-anchor="middle" font-weight="700" font-family="Arial,sans-serif">今</text>
+        <path d="M88 80 L108 80" stroke="#D1D5DB" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M104 74 L112 80 L104 86" fill="none" stroke="#D1D5DB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="150" cy="82" r="30" fill="#F5C9A0"/>
+        <path d="M122 78 Q125 64 133 58 Q139 55 142 61 Q138 68 130 74Z" fill="#7A5C1E"/>
+        <path d="M178 78 Q175 64 167 58 Q161 55 158 61 Q162 68 170 74Z" fill="#7A5C1E"/>
+        <path d="M142 61 Q150 56 158 61" stroke="#7A5C1E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <line x1="146" y1="59" x2="145" y2="52" stroke="#7A5C1E" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="151" y1="57" x2="151" y2="50" stroke="#7A5C1E" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="156" y1="59" x2="157" y2="52" stroke="#7A5C1E" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M135 77 Q138 75 141 77" stroke="#7A5C1E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M159 77 Q162 75 165 77" stroke="#7A5C1E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <circle cx="142" cy="84" r="2.5" fill="#2D1B0E"/>
+        <circle cx="158" cy="84" r="2.5" fill="#2D1B0E"/>
+        <path d="M144 94 Q150 91 156 94" stroke="#2D1B0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <rect x="118" y="119" width="64" height="20" rx="10" fill="#F97316"/>
+        <text x="150" y="133" font-size="11" fill="white" text-anchor="middle" font-weight="700" font-family="Arial,sans-serif">半年後</text>
+        <path d="M188 80 L208 80" stroke="#D1D5DB" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M204 74 L212 80 L204 86" fill="none" stroke="#D1D5DB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="250" cy="82" r="30" fill="#F5C9A0"/>
+        <line x1="241" y1="55" x2="240" y2="47" stroke="#7A5C1E" stroke-width="2" stroke-linecap="round"/>
+        <line x1="250" y1="53" x2="250" y2="45" stroke="#7A5C1E" stroke-width="2" stroke-linecap="round"/>
+        <line x1="259" y1="55" x2="260" y2="47" stroke="#7A5C1E" stroke-width="2" stroke-linecap="round"/>
+        <path d="M237 77 Q240 75 243 77" stroke="#7A5C1E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M257 77 Q260 75 263 77" stroke="#7A5C1E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <circle cx="242" cy="84" r="2.5" fill="#2D1B0E"/>
+        <circle cx="258" cy="84" r="2.5" fill="#2D1B0E"/>
+        <path d="M244 97 Q250 93 256 97" stroke="#2D1B0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <rect x="220" y="119" width="60" height="20" rx="10" fill="#EF4444"/>
+        <text x="250" y="133" font-size="11" fill="white" text-anchor="middle" font-weight="700" font-family="Arial,sans-serif">1年後</text>
+        <text x="150" y="157" font-size="10" fill="#9CA3AF" text-anchor="middle" font-family="Arial,sans-serif">放置するほど、取り戻せる髪が減っていく</text>
+      </svg>
+    </div>
+
+    <h3 class="hdg-h3-dot">育毛シャンプーやサプリでは根本解決にならない理由</h3>
+    <div class="lp-prose">
+      <p>AGAの原因は、男性ホルモン（テストステロン）から生まれる<strong>DHT（ジヒドロテストステロン）</strong>という物質です。このDHTが毛根に作用して、髪の成長サイクルを短縮させていきます。</p>
+      <p>育毛シャンプーやサプリは頭皮環境を整えることはできても、<strong>DHTの働きそのものを抑えることはできません</strong>。根本からAGAに対処するには、DHTを抑制する医薬品による治療が必要です。</p>
+    </div>
+
+    <h3 class="hdg-h3-dot" style="margin-top:32px;">ただし、ここに希望があります</h3>
+    <div class="lp-prose">
+      <p><strong>治療を早く始めた人ほど、効果を実感しやすい。</strong>これは医学的にも広く認められている事実です。</p>
+      <p>つまり、「いつかやろう」と先延ばしするほど、取り戻せる髪は少なくなっていく。だからこそ、<strong>「今夜、自宅から、誰にも会わずに」始められる方法</strong>が必要なんです。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     サービス説明・特徴
+============================================================ -->
+<section class="lp-section bg-white">
+  <div class="lp-inner">
+    <h2 class="hdg-h2-border">自宅がクリニックになる。レバクリのオンラインAGA治療。</h2>
+    <div class="illust-split illust-rev">
+      <div class="illust-text">
+        <div class="lp-prose">
+          <p>「クリニックに行く時間がない」「待合室で人に会いたくない」「続けやすい価格じゃないと厳しい」——その全部を解決するために作られたのが、<strong>オンラインAGA治療のレバクリ</strong>です。</p>
+        </div>
+      </div>
+      <div class="illust-fig">
+        <!-- SVG③：スマホで自宅診察 -->
+        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="115" cy="105" r="88" fill="#EEF3FA"/>
+          <rect x="28" y="152" width="186" height="34" rx="12" fill="#1A2744" opacity="0.10"/>
+          <rect x="28" y="152" width="42" height="34" rx="10" fill="#1A2744" opacity="0.12"/>
+          <rect x="172" y="152" width="42" height="34" rx="10" fill="#1A2744" opacity="0.12"/>
+          <path d="M82 118 L82 172 L148 172 L148 118 Q138 105 120 101 L115 105 L110 101 Q92 105 82 118Z" fill="#00B4A0"/>
+          <path d="M84 165 L70 188" stroke="#00B4A0" stroke-width="15" stroke-linecap="round" fill="none"/>
+          <path d="M146 165 L160 188" stroke="#00B4A0" stroke-width="15" stroke-linecap="round" fill="none"/>
+          <rect x="108" y="91" width="14" height="18" rx="3" fill="#F5C9A0"/>
+          <ellipse cx="115" cy="74" rx="24" ry="25" fill="#F5C9A0"/>
+          <path d="M93 65 Q101 50 115 47 Q129 44 137 65" fill="#7A5C1E"/>
+          <path d="M107 73 Q110 70 113 73" stroke="#2D1B0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M117 73 Q120 70 123 73" stroke="#2D1B0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M109 83 Q115 89 121 83" stroke="#2D1B0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M84 124 Q72 140 66 158" stroke="#00B4A0" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <ellipse cx="64" cy="162" rx="9" ry="8" fill="#F5C9A0"/>
+          <path d="M146 121 Q164 117 170 112" stroke="#00B4A0" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <ellipse cx="169" cy="117" rx="9" ry="8" fill="#F5C9A0"/>
+          <rect x="164" y="100" width="32" height="50" rx="5" fill="#1A2744"/>
+          <rect x="167" y="104" width="26" height="42" rx="3" fill="white"/>
+          <circle cx="180" cy="118" r="10" fill="#E0F4F2"/>
+          <circle cx="177" cy="116" r="2" fill="#2D1B0E"/>
+          <circle cx="183" cy="116" r="2" fill="#2D1B0E"/>
+          <path d="M177 123 Q180 126 183 123" stroke="#00B4A0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M170 110 Q175 104 180 103 Q185 104 190 110" fill="#00B4A0"/>
+          <line x1="180" y1="103" x2="180" y2="108" stroke="white" stroke-width="1.5"/>
+          <line x1="177" y1="105.5" x2="183" y2="105.5" stroke="white" stroke-width="1.5"/>
+          <rect x="167" y="134" width="26" height="8" rx="4" fill="#00B4A0" opacity="0.15"/>
+          <text x="180" y="141" font-size="6" fill="#00B4A0" text-anchor="middle" font-weight="700" font-family="Arial,sans-serif">診察中</text>
+        </svg>
+      </div>
+    </div>
+
+    <h3 class="hdg-h3-dot" style="margin-top:36px;">レバクリが選ばれる3つの仕組み</h3>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <div class="step-title">スマホ1つ、最短15分で処方完了</div>
+          <div class="step-desc">予約から診察、処方まですべてスマホで完結。アプリのダウンロードも来院も不要。深夜26時まで診察対応しているので、仕事終わりや寝る前でもOKです。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <div class="step-title">月1,349円〜。2年目以降も同じ価格。</div>
+          <div class="step-desc">「初回だけ安くて、2年目から値上がり」がありません。育毛プランは12ヶ月定期で月1,349円。送料込みプランもあり、トータルコストで業界最安水準です。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <div class="step-title">誰にもバレない、徹底したプライバシー配慮</div>
+          <div class="step-desc">届く荷物は送り主名・品名ともに中身がわからない状態。家族と同居していても、受け取った本人以外には何の荷物かわかりません。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     比較表
+============================================================ -->
+<section class="lp-section bg-gray">
+  <div class="lp-inner">
+    <h2 class="hdg-h2-border">他のオンラインクリニックと、正直に比べてみました</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>比較項目</th>
+            <th class="accent-col">レバクリ</th>
+            <th>A社（大手）</th>
+            <th>B社（大手）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>月額料金（育毛）</td><td class="cell-accent">1,349円〜</td><td class="cell-muted">1,760円〜</td><td class="cell-muted">1,698円〜</td></tr>
+          <tr><td>初診料・再診料</td><td class="cell-accent">0円</td><td class="cell-muted">0円（条件付き）</td><td class="cell-muted">0円</td></tr>
+          <tr><td>診察対応時間</td><td class="cell-accent">8:00〜26:00</td><td class="cell-muted">7:00〜24:00</td><td class="cell-muted">24時間（予約制）</td></tr>
+          <tr><td>処方までの時間</td><td class="cell-accent">最短15分</td><td class="cell-muted">最短15分</td><td class="cell-muted">10〜30分</td></tr>
+          <tr><td>送料</td><td class="cell-accent">プランにより無料</td><td class="cell-muted">550円/回</td><td class="cell-muted">550円/回</td></tr>
+          <tr><td>全額返金保証</td><td class="cell-accent">あり</td><td class="cell-muted">なし</td><td class="cell-muted">なし</td></tr>
+          <tr><td>2年目以降の価格</td><td class="cell-accent">変わらず同額</td><td class="cell-muted">割引終了の場合あり</td><td class="cell-muted">同額</td></tr>
+          <tr><td>梱包のプライバシー</td><td class="cell-accent">完全ステルス</td><td class="cell-muted">一般的な梱包</td><td class="cell-muted">一般的な梱包</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">※比較情報は2025年6月時点の各社公式サイト公開情報に基づきます。</p>
+
+    <h3 class="hdg-h3-dot" style="margin-top:44px;">3つのプランから、自分に合ったものを選べる</h3>
+    <div class="table-wrap" style="margin-top:16px;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>プラン名</th>
+            <th>こんな方に</th>
+            <th>主な成分</th>
+            <th class="accent-col">月額（12ヶ月定期）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>🟢 育毛プラン</strong></td><td>まず抜け毛を止めたい</td><td>フィナステリド</td><td class="cell-accent">1,349円</td></tr>
+          <tr><td><strong>🟡 発毛プラン</strong></td><td>しっかり生やしたい</td><td>フィナ＋ミノキ内服</td><td class="cell-accent">1,650円</td></tr>
+          <tr><td><strong>🔴 発毛プランEX</strong></td><td>最大限の効果を求めたい</td><td>デュタ＋ミノキ内服</td><td class="cell-accent">4,384円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="lp-prose" style="margin-top:16px;">
+      <p>迷ったら、まずは育毛プランで十分です。<strong>医師と相談しながら、途中でプラン変更も可能</strong>なので、焦って高いプランを選ぶ必要はありません。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     リスクゼロ
+============================================================ -->
+<section class="lp-section bg-white">
+  <div class="lp-inner">
+    <h2 class="hdg-h2-border">リスクゼロで始められる、3つの理由</h2>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <div class="step-title">初診料・再診料が完全無料</div>
+          <div class="step-desc">「まずは話を聞くだけ」でもOK。診察を受けた後に治療に進む義務はありません。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <div class="step-title">全額返金保証あり</div>
+          <div class="step-desc">効果に満足できなければ返金対応。金銭的リスクを気にせず始められます。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <div class="step-title">定期便はいつでも解約OK</div>
+          <div class="step-desc">回数縛りなし。スマホから手続きできます。出口が見えるから、安心して始められます。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     口コミ
+============================================================ -->
+<section class="lp-section bg-gray">
+  <div class="lp-inner">
+    <h2 class="hdg-h2-border">始めた人たちの、リアルな声</h2>
+    <div class="review-list">
+      <div class="review-card">
+        <div class="review-top">
+          <span class="review-stars">★★★★★</span>
+          <span class="review-tag">3ヶ月継続</span>
+        </div>
+        <div class="review-title">「深夜に予約→翌朝届いて驚きました」</div>
+        <div class="review-body">夜中の1時に予約して、すぐに診察してもらえました。先生も穏やかで、10分くらいで処方まで完了。翌朝にはポストに届いていて、正直感動しました。今3ヶ月目ですが、抜け毛がかなり減ってきた実感があります。</div>
+        <div class="review-author">
+          <div class="review-avatar">
+            <svg viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="23" cy="23" r="23" fill="#E4F2F0"/>
+              <path d="M8 46 Q8 34 16 31 L23 35 L30 31 Q38 34 38 46Z" fill="#1A2744"/>
+              <path d="M21 31 L23 35 L25 31 L24 28 L22 28Z" fill="#00B4A0"/>
+              <rect x="19.5" y="24" width="7" height="9" rx="3" fill="#F5C9A0"/>
+              <ellipse cx="23" cy="18" rx="9" ry="10" fill="#F5C9A0"/>
+              <ellipse cx="14" cy="18" rx="2.2" ry="2.8" fill="#F5C9A0"/>
+              <ellipse cx="32" cy="18" rx="2.2" ry="2.8" fill="#F5C9A0"/>
+              <path d="M14 17 Q13 7 23 7 Q33 7 32 17 Q30 10 23 10 Q16 10 14 17Z" fill="#3D2B1F"/>
+              <path d="M14 17 Q14 13 16 12" stroke="#3D2B1F" stroke-width="1" fill="none"/>
+              <path d="M32 17 Q32 13 30 12" stroke="#3D2B1F" stroke-width="1" fill="none"/>
+              <ellipse cx="19.5" cy="17" rx="1.4" ry="1.6" fill="#2D1B0E"/>
+              <ellipse cx="26.5" cy="17" rx="1.4" ry="1.6" fill="#2D1B0E"/>
+              <path d="M17 14 Q19.5 12.8 22 14" stroke="#3D2B1F" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+              <path d="M24 14 Q26.5 12.8 29 14" stroke="#3D2B1F" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+              <path d="M19.5 22 Q23 24.5 26.5 22" stroke="#C4896A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="review-author-name">T.Kさん（32歳・会社員）</div>
+            <div class="review-author-meta">利用開始から3ヶ月</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top">
+          <span class="review-stars">★★★★★</span>
+          <span class="review-tag">継続中</span>
+        </div>
+        <div class="review-title">「全額返金保証があったから踏み切れた」</div>
+        <div class="review-body">オンラインって正直不安でした。でも、返金保証があるなら損はしないと思って申し込みました。説明も丁寧だったし、薬の副作用についてもしっかり聞けたので安心できました。</div>
+        <div class="review-author">
+          <div class="review-avatar">
+            <svg viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="23" cy="23" r="23" fill="#FFF3EC"/>
+              <path d="M8 46 Q8 34 16 31 L23 35 L30 31 Q38 34 38 46Z" fill="#00B4A0"/>
+              <rect x="19.5" y="24" width="7" height="9" rx="3" fill="#F5C9A0"/>
+              <ellipse cx="23" cy="18" rx="9" ry="10" fill="#F5C9A0"/>
+              <ellipse cx="14" cy="18" rx="2.2" ry="2.8" fill="#F5C9A0"/>
+              <ellipse cx="32" cy="18" rx="2.2" ry="2.8" fill="#F5C9A0"/>
+              <path d="M14.5 20 Q13 7 23 6 Q33 7 31.5 20 Q29 12 23 12 Q17 12 14.5 20Z" fill="#2D1B0E"/>
+              <path d="M14.5 20 Q14 23 15 26" stroke="#2D1B0E" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <path d="M31.5 20 Q32 23 31 26" stroke="#2D1B0E" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <ellipse cx="19.5" cy="17" rx="1.4" ry="1.6" fill="#2D1B0E"/>
+              <ellipse cx="26.5" cy="17" rx="1.4" ry="1.6" fill="#2D1B0E"/>
+              <circle cx="20.2" cy="16.3" r="0.5" fill="white"/>
+              <circle cx="27.2" cy="16.3" r="0.5" fill="white"/>
+              <path d="M17 13.5 Q19.5 12.3 22 13.5" stroke="#2D1B0E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+              <path d="M24 13.5 Q26.5 12.3 29 13.5" stroke="#2D1B0E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+              <path d="M19 21.5 Q23 25 27 21.5" stroke="#C4896A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="review-author-name">S.Nさん（28歳・営業職）</div>
+            <div class="review-author-meta">利用開始から2ヶ月</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+<section class="lp-section bg-white">
+  <div class="lp-inner">
+    <h2 class="hdg-h2-border">よくある質問</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-mark">Q</div>
+          <span class="faq-q-text">本当にオンラインだけで大丈夫ですか？</span>
+          <span class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="faq-answer">国家資格を持つ医師がビデオ通話で丁寧に診察します。対面クリニックと同じ正規の処方薬をお届けします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-mark">Q</div>
+          <span class="faq-q-text">副作用が心配です。</span>
+          <span class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="faq-answer">医師が個々の体質や既往歴を確認した上で処方します。服用中に異変があれば、いつでもオンラインで相談可能です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-mark">Q</div>
+          <span class="faq-q-text">届く荷物で家族にバレませんか？</span>
+          <span class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="faq-answer">送り主名・品名ともに中身がわからない状態でお届けします。外見からAGA治療薬と判別されることはありません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-q-mark">Q</div>
+          <span class="faq-q-text">本当にいつでも解約できますか？</span>
+          <span class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="faq-answer">はい。定期便の回数縛りはありません。スマホから手続きできます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     こんな人に（チェックリスト）
+============================================================ -->
+<section class="lp-section bg-gray">
+  <div class="lp-inner">
+    <h2 class="hdg-h2-border">こんな人にこそ、レバクリは向いています</h2>
+    <!-- SVG④：安心・解決した男性 -->
+    <div class="illust-center">
+      <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="115" cy="108" r="86" fill="#E0F4F2"/>
+        <path d="M52 54 L54 60 L60 62 L54 64 L52 70 L50 64 L44 62 L50 60Z" fill="#FDBC00" opacity="0.85"/>
+        <path d="M186 46 L187.5 51 L192 52.5 L187.5 54 L186 59 L184.5 54 L180 52.5 L184.5 51Z" fill="#00B4A0" opacity="0.75"/>
+        <path d="M74 36 L75 39 L78 40 L75 41 L74 44 L73 41 L70 40 L73 39Z" fill="#F97316" opacity="0.65"/>
+        <path d="M82 130 L82 192 L148 192 L148 130 Q138 117 120 113 L115 117 L110 113 Q92 117 82 130Z" fill="#1A2744"/>
+        <rect x="108" y="103" width="14" height="18" rx="3" fill="#F5C9A0"/>
+        <ellipse cx="115" cy="87" rx="26" ry="27" fill="#F5C9A0"/>
+        <path d="M90 78 Q96 59 115 55 Q134 51 140 78" fill="#7A5C1E"/>
+        <path d="M94 74 Q98 63 105 61" stroke="#5A3E10" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M118 57 Q126 60 132 68" stroke="#5A3E10" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M104 85 Q108 82 112 85" stroke="#2D1B0E" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M118 85 Q122 82 126 85" stroke="#2D1B0E" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M106 97 Q115 107 124 97" stroke="#2D1B0E" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="102" cy="96" rx="6" ry="4" fill="#F97316" opacity="0.20"/>
+        <ellipse cx="128" cy="96" rx="6" ry="4" fill="#F97316" opacity="0.20"/>
+        <path d="M148 134 Q165 128 170 120" stroke="#1A2744" stroke-width="14" fill="none" stroke-linecap="round"/>
+        <ellipse cx="172" cy="116" rx="10" ry="12" fill="#F5C9A0"/>
+        <path d="M163 115 Q159 108 165 105 Q171 103 173 109" stroke="#F5C9A0" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path d="M86 135 Q72 147 70 163" stroke="#1A2744" stroke-width="14" fill="none" stroke-linecap="round"/>
+        <ellipse cx="69" cy="167" rx="9" ry="8" fill="#F5C9A0"/>
+      </svg>
+    </div>
+    <div class="checklist-card">
+      <div class="checklist-card-title">1つでも当てはまれば、まず無料の診察を受ける価値があります</div>
+      <div class="checklist-item"><div class="check-badge">✓</div><span>抜け毛が増えてきて、このまま進行するのが怖い</span></div>
+      <div class="checklist-item"><div class="check-badge">✓</div><span>育毛シャンプーやサプリで効果を感じられなかった</span></div>
+      <div class="checklist-item"><div class="check-badge">✓</div><span>クリニックに通う時間がない。または行くのが恥ずかしい</span></div>
+      <div class="checklist-item"><div class="check-badge">✓</div><span>家族や同僚に治療していることを知られたくない</span></div>
+      <div class="checklist-item"><div class="check-badge">✓</div><span>月々のコストを抑えて、長く続けられる治療を探している</span></div>
+      <div class="checklist-item"><div class="check-badge">✓</div><span>今すぐ始めたい。できれば明日には薬が届いてほしい</span></div>
+      <div class="checklist-item"><div class="check-badge">✓</div><span>「まず話を聞いてから決めたい」という慎重派</span></div>
+    </div>
+    <div class="lp-prose" style="margin-top:24px;">
+      <p>レバクリは<strong>無料で診察を受けられて、治療に進む義務もありません</strong>。「自分の状態を医師に確認してもらう」だけでも利用できます。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     クロージング + CTAバナー
+============================================================ -->
+<section class="lp-section bg-white">
+  <div class="lp-inner">
+    <div class="lp-prose" style="margin-bottom:40px;">
+      <p>AGAは進行性です。失った毛根は、自然には戻りません。</p>
+      <p>でも、<strong>今日始めれば、今日の髪を守ることができます。</strong>治療開始が早いほど、維持できる髪の量が多い——これは医学的事実です。</p>
+      <p><strong>半年後の自分は、今日の決断で変わります。</strong></p>
+    </div>
+    <div class="cta-banner">
+      <img class="cta-bg-photo" src={mvImage.src} alt="" aria-hidden="true" />
+      <div class="cta-bg-fade"></div>
+      <div class="cta-banner-inner">
+        <div class="cta-banner-eyebrow">今すぐ始める</div>
+        <div class="cta-banner-title">半年後、鏡の前で笑えるように。<br />まずは無料の診察から。</div>
+        <a href={affiliateUrl} class="btn-primary" style="margin:0 auto;">
+          今すぐ無料で診察を予約する
+          <i class="arrow">›</i>
+        </a>
+        <div class="cta-banner-note">初診料0円・全額返金保証あり・深夜26時まで対応</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</LayoutLp>

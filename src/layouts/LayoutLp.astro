@@ -1,0 +1,112 @@
+---
+/**
+ * LayoutLp.astro
+ * LP汎用レイアウト（le-age0301デザインシステム使用）
+ *
+ * 使い方:
+ *   import LayoutLp from '../layouts/LayoutLp.astro';
+ *   <LayoutLp title="ページタイトル" description="説明文" affiliateUrl="/link/xxx/">
+ *     <!-- 各セクションのHTMLをここに書く -->
+ *   </LayoutLp>
+ *
+ * Props:
+ *   title       : <title> タグ
+ *   description : meta description
+ *   affiliateUrl: CTAボタンの遷移先URL（省略時は "#"）
+ *   canonical   : canonical URL（任意）
+ *   ogImage     : OGP画像URL（任意）
+ */
+
+import "../styles/lp-template.css";
+
+const {
+  title,
+  description = "",
+  affiliateUrl = "#",
+  canonical,
+  ogImage,
+} = Astro.props;
+
+const GTM_ID = "GTM-5PW3KRHH";
+---
+
+<!doctype html>
+<html lang="ja" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+
+    <!-- OGP -->
+    <meta property="og:title"       content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type"        content="article" />
+    <meta property="og:url"         content={canonical || Astro.url} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+    <link rel="icon" href="/assets/images/favicon.ico" />
+
+    <!-- LINE Seed JP フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- GTM -->
+    {import.meta.env.PROD && (
+      <script is:inline define:vars={{ GTM_ID }}>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer',GTM_ID);
+      </script>
+    )}
+  </head>
+
+  <body>
+    {import.meta.env.PROD && (
+      <noscript>
+        <iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      </noscript>
+    )}
+
+    <!-- ページコンテンツ（各LPのセクションがここに入る） -->
+    <slot />
+
+    <!-- Match Box フッター -->
+    <footer class="lp-footer">
+      <div class="lp-footer-inner">
+        <div class="lp-footer-logo">
+          <a href="/"><img src="/assets/images/logo_wh.svg" alt="Match Box" /></a>
+          <p class="lp-footer-tagline">あなたの世界に、新しい可能性を。</p>
+        </div>
+        <nav class="lp-footer-links">
+          <a href="/company/">運営者情報</a>
+          <a href="/privacy/">プライバシーポリシー</a>
+        </nav>
+      </div>
+      <div class="lp-footer-copy">&copy; {new Date().getFullYear()} Match Box. All Rights Reserved.</div>
+    </footer>
+
+    <!-- FAQ アコーディオン（全LPで共通） -->
+    <script is:inline>
+      document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var item = btn.closest('.faq-item');
+          var isOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item.open').forEach(function(el) {
+            el.classList.remove('open');
+          });
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+    </script>
+  </body>
+</html>
