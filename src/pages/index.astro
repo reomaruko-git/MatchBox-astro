@@ -4,8 +4,35 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 
-// 1. 全LPを自動取得
-const allLps = await getCollection('lps');
+// 1. .md ベースのLP（src/content/lps/）
+const mdLps = await getCollection('lps');
+
+// 2. .astro ベースのLP（src/content/lp-pages/）
+const astrLps = await getCollection('lp-pages');
+
+// 3. 統一形式にノーマライズしてマージ
+type LpItem = {
+  slug: string;
+  title: string;
+  description?: string;
+  mv?: ImageMetadata;
+};
+
+const mdItems: LpItem[] = mdLps.map((lp) => ({
+  slug: lp.slug,
+  title: lp.data.title,
+  description: lp.data.description,
+  mv: lp.data.images?.mv,
+}));
+
+const astroItems: LpItem[] = astrLps.map((lp) => ({
+  slug: lp.id,
+  title: lp.data.title,
+  description: lp.data.description,
+  mv: lp.data.mv,
+}));
+
+const allItems: LpItem[] = [...mdItems, ...astroItems];
 
 // デザイン用の共通色
 const colors = { primary: '#1e3a8a', accent: '#ea580c' };
@@ -13,35 +40,35 @@ const colors = { primary: '#1e3a8a', accent: '#ea580c' };
 
 <Layout title="MatchBox - LP Index" description="運用中のランディングページ一覧" colors={colors}>
   <main class="max-w-6xl mx-auto px-6 py-20">
-    
+
     <header class="mb-20 text-center flex flex-col items-center">
       {/* ロゴとタイトルのコンテナ */}
       <h1 class="flex items-center justify-center mb-4">
         {/* ロゴ画像：public/assets/images/ に置いたものを呼び出し */}
-        <img 
-          src="/assets/images/logo.svg" 
-          alt="MatchBox" 
+        <img
+          src="/assets/images/logo.svg"
+          alt="MatchBox"
           class="w-30 h-30 md:w-40 md:h-40 object-contain"
         />
       </h1>
 
       <div class="h-1 w-24 bg-accent mb-6"></div>
-      
+
       <p class="text-slate-500 font-medium tracking-widest uppercase text-xs md:text-sm">
-        コンテンツ: <span class="text-slate-900 font-bold">{allLps.length}</span> 件
+        コンテンツ: <span class="text-slate-900 font-bold">{allItems.length}</span> 件
       </p>
     </header>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      {allLps.map((lp) => (
+      {allItems.map((lp) => (
         <a href={`/${lp.slug}/`} class="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col">
-          
-          {/* サムネイルエリア（バッジを削除してスッキリ） */}
+
+          {/* サムネイルエリア */}
           <div class="aspect-[16/10] overflow-hidden bg-slate-100 relative">
-            {lp.data.images?.mv && (
-              <Image 
-                src={lp.data.images.mv} 
-                alt={lp.data.title} 
+            {lp.mv && (
+              <Image
+                src={lp.mv}
+                alt={lp.title}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             )}
@@ -51,10 +78,10 @@ const colors = { primary: '#1e3a8a', accent: '#ea580c' };
           {/* テキストエリア */}
           <div class="p-10 flex-grow flex flex-col">
             <h2 class="text-xl font-bold text-slate-800 mb-4 group-hover:text-primary transition-colors line-clamp-2 leading-tight tracking-tight">
-              {lp.data.title}
+              {lp.title}
             </h2>
             <p class="text-slate-400 text-sm line-clamp-3 mb-8 leading-relaxed font-medium">
-              {lp.data.description}
+              {lp.description}
             </p>
             <div class="mt-auto flex items-center text-[10px] font-black text-primary uppercase tracking-[0.2em]">
               ページの詳細へ <i class="fa-solid fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform duration-300"></i>
