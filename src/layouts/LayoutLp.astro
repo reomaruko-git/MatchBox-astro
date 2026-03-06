@@ -25,7 +25,15 @@ const {
   affiliateUrl = "#",
   canonical,
   ogImage,
+  colors = {},
 } = Astro.props;
+
+// デフォルト色（lp-template.css の :root と同じ値）
+const c = {
+  primary:    colors.primary    ?? "#1A2744",
+  accent:     colors.accent     ?? "#00B4A0",
+  accentDark: colors.accentDark ?? "#009688",
+};
 
 const GTM_ID = "GTM-5PW3KRHH";
 ---
@@ -67,6 +75,14 @@ const GTM_ID = "GTM-5PW3KRHH";
         })(window,document,'script','dataLayer',GTM_ID);
       </script>
     )}
+    <!-- 案件ごとのカラー上書き -->
+    <style define:vars={{ lpPrimary: c.primary, lpAccent: c.accent, lpAccentDark: c.accentDark }}>
+      :root {
+        --primary:     var(--lpPrimary);
+        --accent:      var(--lpAccent);
+        --accent-dark: var(--lpAccentDark);
+      }
+    </style>
   </head>
 
   <body>

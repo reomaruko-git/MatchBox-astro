@@ -10,7 +10,20 @@ const mdLps = await getCollection('lps');
 // 2. .astro ベースのLP（src/content/lp-pages/）
 const astrLps = await getCollection('lp-pages');
 
-// 3. 統一形式にノーマライズしてマージ
+// 3. src/assets/images/lp/ 配下の mv.webp を slug をキーに一括取得
+//    → JSONに mv を書かなくても、画像ファイルを置くだけで自動表示される
+const mvGlob = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/images/lp/*/mv.webp',
+  { eager: true }
+);
+
+// glob キー（例: "../assets/images/lp/le-aga/mv.webp"）から slug を抽出するヘルパー
+function getMvBySlug(slug: string): ImageMetadata | undefined {
+  const key = `../assets/images/lp/${slug}/mv.webp`;
+  return mvGlob[key]?.default;
+}
+
+// 4. 統一形式にノーマライズしてマージ
 type LpItem = {
   slug: string;
   title: string;
@@ -22,14 +35,14 @@ const mdItems: LpItem[] = mdLps.map((lp) => ({
   slug: lp.slug,
   title: lp.data.title,
   description: lp.data.description,
-  mv: lp.data.images?.mv,
+  mv: lp.data.images?.mv ?? getMvBySlug(lp.slug),
 }));
 
 const astroItems: LpItem[] = astrLps.map((lp) => ({
   slug: lp.id,
   title: lp.data.title,
   description: lp.data.description,
-  mv: lp.data.mv,
+  mv: getMvBySlug(lp.id),
 }));
 
 const allItems: LpItem[] = [...mdItems, ...astroItems];
@@ -42,9 +55,7 @@ const colors = { primary: '#1e3a8a', accent: '#ea580c' };
   <main class="max-w-6xl mx-auto px-6 py-20">
 
     <header class="mb-20 text-center flex flex-col items-center">
-      {/* ロゴとタイトルのコンテナ */}
       <h1 class="flex items-center justify-center mb-4">
-        {/* ロゴ画像：public/assets/images/ に置いたものを呼び出し */}
         <img
           src="/assets/images/logo.svg"
           alt="MatchBox"

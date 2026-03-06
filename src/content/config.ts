@@ -151,12 +151,13 @@ const lps = defineCollection({
 });
 
 // .astro ページ用の軽量メタデータコレクション
+// mv は不要（index.astro が src/assets/images/lp/{slug}/mv.webp を自動取得）
 const lpPages = defineCollection({
   type: 'data',
-  schema: ({ image }) => z.object({
+  schema: z.object({
     title: z.string(),
     description: z.string().optional(),
-    mv: image().optional(),
+    affiliateLink: z.string().optional(),
   }),
 });
 

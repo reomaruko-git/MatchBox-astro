@@ -16,6 +16,7 @@ const affiliateUrl = "/link/le-aga/";
   affiliateUrl={affiliateUrl}
   canonical="https://matchbox-media.com/le-aga/"
   ogImage={mvImage.src}
+  colors={{ primary: "#1A2744", accent: "#00B4A0", accentDark: "#009688" }}
 >
 
 <!-- ============================================================
@@ -53,7 +54,7 @@ const affiliateUrl = "/link/le-aga/";
         </svg>
         最短即日発送・翌日届く
       </span>
-      <span class="hero-badge">
+      <span class="hero-badge sp-only">
         <svg class="badge-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="7" width="10" height="7" rx="1.5"/>
           <path d="M5 7V5a3 3 0 016 0v2"/>
@@ -77,7 +78,7 @@ const affiliateUrl = "/link/le-aga/";
 ============================================================ -->
 <section class="lp-section bg-white">
   <div class="lp-inner">
-    <h2 class="hdg-h2-border">最近、鏡を見るのが怖くなっていませんか？</h2>
+    <h2 class="hdg-h2-border">ふとした瞬間に、あれ？って思うことありますよね。</h2>
     <div class="illust-split">
       <div class="illust-text">
         <div class="lp-prose">
@@ -212,7 +213,7 @@ const affiliateUrl = "/link/le-aga/";
       <p>育毛シャンプーやサプリは頭皮環境を整えることを目的としたものが多く、AGAの進行原因であるDHTへの対処とはアプローチが異なります。<strong>医薬品によるAGA治療は、DHTを抑制する有効な選択肢の一つ</strong>として知られています。</p>
     </div>
 
-    <h3 class="hdg-h3-dot" style="margin-top:32px;">ただし、ここに希望あり！</h3>
+    <h3 class="hdg-h3-dot" style="margin-top:32px;">まだ諦めるには早い！</h3>
     <div class="lp-prose">
       <p><span class="marker-teal">治療を早く始めた人ほど、効果を実感しやすい。</span>これは医学的にも広く認められている事実です。</p>
       <p>つまり、「いつかやろう」と先延ばしするほど、取り戻せる髪は少なくなっていく。だからこそ、<strong>「今夜、自宅から、誰にも会わずに」始められる方法</strong>が必要なんです。</p>
@@ -271,29 +272,58 @@ const affiliateUrl = "/link/le-aga/";
       </div>
     </div>
 
-    <h3 class="hdg-h3-dot" style="margin-top:36px;">レバクリが選ばれる3つの仕組み</h3>
-    <div class="steps-list">
-      <div class="step-item">
-        <div class="step-badge">1</div>
-        <div class="step-content">
-          <div class="step-title">スマホ1つ、最短15分で処方完了</div>
-          <div class="step-desc">予約から診察、処方まですべてスマホで完結。アプリのダウンロードも来院も不要。深夜26時まで診察対応しているので、仕事終わりや寝る前でもOKです。</div>
+    <h3 class="reason-heading">続けられる<br />3つの仕組み</h3>
+    <div class="reason-cards">
+
+      <div class="reason-card">
+        <div class="reason-num">1</div>
+        <div class="reason-icon-wrap">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="4" width="20" height="34" rx="3" stroke="#00B4A0" stroke-width="2.2" fill="white"/>
+            <rect x="17" y="8" width="14" height="20" rx="1.5" fill="#E6F7F6"/>
+            <circle cx="24" cy="33" r="1.5" fill="#00B4A0"/>
+            <circle cx="32" cy="14" r="7" fill="#E6F7F6" stroke="#00B4A0" stroke-width="1.8"/>
+            <path d="M32 11v3.5l2 2" stroke="#00B4A0" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
         </div>
+        <div class="reason-title">スマホ1つ<br />最短15分で処方完了</div>
+        <div class="reason-desc">予約から診察・処方まですべてスマホで完結。アプリ不要、来院不要。深夜26時まで対応しているので、仕事終わりや寝る前でもOK。</div>
       </div>
-      <div class="step-item">
-        <div class="step-badge">2</div>
-        <div class="step-content">
-          <div class="step-title">月1,349円〜。2年目以降も同じ価格。</div>
-          <div class="step-desc">「初回だけ安くて、2年目から値上がり」がありません。育毛プランは12ヶ月定期で月1,349円。送料込みプランもあり、トータルコストを抑えた、続けやすい価格設定です。</div>
+
+      <div class="reason-card">
+        <div class="reason-num">2</div>
+        <div class="reason-icon-wrap">
+          <!-- コイン（円マーク） -->
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="17" fill="#E6F7F6" stroke="#00B4A0" stroke-width="2.2"/>
+            <circle cx="24" cy="24" r="11" fill="white" stroke="#00B4A0" stroke-width="1.6"/>
+            <text x="24" y="29" text-anchor="middle" font-size="13" font-weight="700" fill="#00B4A0" font-family="sans-serif">¥</text>
+          </svg>
         </div>
+        <div class="reason-title">月1,349円〜<br />2年目以降も同じ価格</div>
+        <div class="reason-desc">「初回だけ安くて2年目から値上がり」がありません。育毛プランは12ヶ月定期で月1,349円。送料込みプランもあり、続けやすい価格設定です。</div>
       </div>
-      <div class="step-item">
-        <div class="step-badge">3</div>
-        <div class="step-content">
-          <div class="step-title">中身がわからない、徹底したプライバシー配慮</div>
-          <div class="step-desc">届く荷物は送り主名・品名ともに中身がわからない状態。同居のご家族にも内容物を気付かれにくい梱包でお届けします。</div>
+
+      <div class="reason-card">
+        <div class="reason-num">3</div>
+        <div class="reason-icon-wrap">
+          <!-- ダンボール箱 -->
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 箱本体 -->
+            <rect x="8" y="20" width="32" height="22" rx="2" fill="#E6F7F6" stroke="#00B4A0" stroke-width="2.2"/>
+            <!-- フタ左 -->
+            <path d="M8 20 L16 13 L32 13 L40 20" stroke="#00B4A0" stroke-width="2.2" stroke-linejoin="round" fill="#E6F7F6"/>
+            <!-- フタの折り目（中央線） -->
+            <path d="M24 13 L24 20" stroke="#00B4A0" stroke-width="2" stroke-linecap="round"/>
+            <!-- 箱中央の帯（テープ） -->
+            <path d="M24 20 L24 42" stroke="#00B4A0" stroke-width="2" stroke-linecap="round"/>
+            <path d="M8 28 L40 28" stroke="#00B4A0" stroke-width="2" stroke-linecap="round"/>
+          </svg>
         </div>
+        <div class="reason-title">中身がわからない<br />徹底したプライバシー配慮</div>
+        <div class="reason-desc">届く荷物は送り主名・品名ともに中身がわからない状態で配送。同居のご家族にも内容物を気付かれにくい梱包でお届けします。</div>
       </div>
+
     </div>
   </div>
 </section>
@@ -304,7 +334,7 @@ const affiliateUrl = "/link/le-aga/";
 ============================================================ -->
 <section class="lp-section bg-gray">
   <div class="lp-inner">
-    <h2 class="hdg-h2-border">レバクリが選ばれる理由</h2>
+    <h2 class="hdg-h2-border">レバクリのサービス詳細</h2>
     <div class="table-wrap">
       <table class="data-table">
         <thead>
@@ -520,7 +550,7 @@ const affiliateUrl = "/link/le-aga/";
     <div class="lp-prose" style="margin-bottom:40px;">
       <p>AGAは進行性です。失った毛根は、自然には戻りません。</p>
       <p>一般的に、AGAは早期に治療を開始するほど良好な経過を辿りやすいとされています。<strong>今日から対策を始めることが、今の状態を維持するための第一歩です。</strong></p>
-      <p><strong>半年後の自分のために、まず医師に相談するところから始めてみてください。</strong></p>
+      <p><strong>まず医師に相談するところから始めてみてください。</strong></p>
     </div>
     <div class="cta-banner">
       <img class="cta-bg-photo" src={mvImage.src} alt="" aria-hidden="true" />
@@ -528,7 +558,7 @@ const affiliateUrl = "/link/le-aga/";
       <div class="cta-banner-inner">
         <div class="cta-banner-eyebrow">今日から対策！</div>
         <div class="cta-banner-title">半年後、鏡の前で笑えるように。<br />まずは無料の診察から。</div>
-        <a href={affiliateUrl} class="btn-primary" style="margin:0 auto;">
+        <a href={affiliateUrl} class="btn-primary">
           今すぐ無料で診察を予約する
           <i class="arrow">›</i>
         </a>

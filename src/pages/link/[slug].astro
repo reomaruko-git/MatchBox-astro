@@ -5,17 +5,25 @@ import RedirectLayout from '../../layouts/RedirectLayout.astro';
 // 全てのLP記事に対して /link/[slug] のパスを生成
 export async function getStaticPaths() {
   const lps = await getCollection('lps');
-  return lps.map((entry) => ({
+  const lpPages = await getCollection('lp-pages');
+
+  const lpsRoutes = lps.map((entry) => ({
     params: { slug: entry.slug },
-    props: { entry },
+    props: { title: entry.data.title, affiliateLink: entry.data.affiliateLink },
   }));
+
+  const lpPagesRoutes = lpPages.map((entry) => ({
+    params: { slug: entry.id },
+    props: { title: entry.data.title, affiliateLink: entry.data.affiliateLink },
+  }));
+
+  return [...lpsRoutes, ...lpPagesRoutes];
 }
 
-const { entry } = Astro.props;
-const data = entry.data;
+const { title, affiliateLink } = Astro.props;
 
 // 遷移先URL（データがない場合のフォールバックも設定）
-const affiliateUrl = data.affiliateLink || "https://px.a8.net/svt/ejp?a8mat=XXXXXX";
+const affiliateUrl = affiliateLink || "https://px.a8.net/svt/ejp?a8mat=XXXXXX";
 ---
 
-<RedirectLayout pageTitle={data.title} affiliateUrl={affiliateUrl} />
+<RedirectLayout pageTitle={title} affiliateUrl={affiliateUrl} />
