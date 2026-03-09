@@ -598,7 +598,8 @@ a.inline-link:hover { color: var(--accent-dark); }
 
   /* HERO（SP固有の調整のみ） */
   .hero { min-height: 480px; }
-  .hero-inner { padding: 32px 20px 20px; }
+  .hero-photo { object-position: 60% calc(0% - 30px); }
+  .hero-inner { padding: 92px 20px 20px; }
   .hero-sub { margin-bottom: 16px; }
   .hero-cta-wrap { align-items: center; text-align: center; }
   .hero-microcopy { margin-bottom: 16px; }
